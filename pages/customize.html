@@ -1,0 +1,1404 @@
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bubble Bliss | Customize Drink</title>
+
+    <!-- Bootstrap -->
+
+    <link id="bootstrap-css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/x-icon" href="/assets/favicons/latte-art.png">
+  
+
+    <style>
+
+        
+
+        body{
+            background:#fff7fb;
+            transition:0.4s;
+            overflow-x:hidden;
+        }
+
+        :root{
+            --primary:#ff69b4;
+            --secondary:#7c4dff;
+            --dark:#1f1f1f;
+        }
+
+        /* NAVBAR */
+
+       
+
+     
+
+       
+    
+        /* CUSTOMIZE CARD */
+
+        .customize-box{
+            background:white;
+            border-radius:30px;
+            padding:40px;
+            box-shadow:0 10px 40px rgba(0,0,0,0.08);
+        }
+
+        .section-title{
+            font-size:2.8rem;
+            font-weight:700;
+        }
+
+        .option-card{
+            border:2px solid #f3d9ff;
+            border-radius:20px;
+            padding:25px;
+            transition:0.3s;
+            cursor:pointer;
+            background:white;
+            text-align:center;
+        }
+
+        .option-card:hover{
+            transform:translateY(-8px);
+            border-color:var(--primary);
+        }
+
+        .option-card.active{
+            background:linear-gradient(135deg,#ff69b4,#7c4dff);
+            color:white;
+            border:none;
+        }
+
+        .option-icon{
+            font-size:2.5rem;
+            margin-bottom:15px;
+        }
+
+        .form-control,
+        .form-select{
+            border-radius:15px;
+            padding:14px;
+        }
+
+        .btn-custom{
+            background:linear-gradient(45deg,#ff69b4,#7c4dff);
+            color:white;
+            border:none;
+            border-radius:50px;
+            padding:14px 35px;
+            font-weight:600;
+        }
+
+        .btn-custom:hover{
+            color:white;
+            opacity:0.9;
+        }
+
+        /* SUMMARY */
+
+        .summary-box{
+            background:linear-gradient(135deg,#ff69b4,#7c4dff);
+            color:white;
+            border-radius:25px;
+            padding:35px;
+        }
+
+        /* DARK MODE */
+
+        [data-bs-theme="dark"] body{
+            background:#121212;
+            color:white;
+        }
+
+        [data-bs-theme="dark"] .customize-box,
+        [data-bs-theme="dark"] .option-card{
+            background:#1f1f1f;
+            color:white;
+            border-color:#2b2b2b;
+        }
+
+        [data-bs-theme="dark"] .form-control,
+        [data-bs-theme="dark"] .form-select{
+            background:#2b2b2b;
+            color:white;
+            border-color:#444;
+        }
+
+        [data-bs-theme="dark"] .custom-navbar{
+            background:rgba(0,0,0,0.7);
+        }
+
+        /* RTL */
+
+        [dir="rtl"] body{
+            text-align:right;
+        }
+
+        @media(max-width:768px){
+
+            .hero-title{
+                font-size:2.5rem;
+            }
+
+            .customize-box{
+                padding:25px;
+            }
+        }
+/* Mobile-specific adjustments */
+@media (max-width: 767.98px) {
+    .customize-hero {
+        min-height: auto !important; /* Let content determine height */
+        padding-top: 100px !important; /* Account for fixed navbar */
+        padding-bottom: 40px !important;
+    }
+    
+    .hero-text {
+        font-size: 1rem; /* Slightly smaller text for mobile */
+    }
+
+    .premium-badge {
+        font-size: 0.8rem;
+    }
+}
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+            <i class="fa-solid fa-mug-hot brand-icon"></i>
+            <span>Bubble Bliss</span>
+        </a>
+
+        <!-- Mobile Button -->
+        <button class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu">
+
+            <i class="fa-solid fa-bars-staggered text-white"></i>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <!-- Center Menu -->
+            <ul class="navbar-nav mx-auto align-items-lg-center">
+
+                <!-- Home -->
+                 <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">
+                        Menu
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle active" href="customize.html">
+                        Customize
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Dashboard
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Right Side -->
+            <div class="navbar-actions d-flex align-items-center gap-2">
+
+                <a href="login.html" class="btn order-btn">
+                    Admin
+                </a>
+
+                <button class="btn nav-action-btn" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="btn nav-action-btn" id="rtlToggle">
+                    RTL
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    <!-- HERO -->
+
+   <!-- HERO SECTION -->
+
+<section class="py-5 customize-hero position-relative overflow-hidden min-vh-100 d-flex align-items-center">
+    <div class="hero-overlay position-absolute w-100 h-100 top-0 start-0 z-1"></div>
+
+    <div class="floating-boba boba-1">🧋</div>
+    <div class="floating-boba boba-2">✨</div>
+    <div class="floating-boba boba-3">🍓</div>
+
+    <div class="container position-relative z-2">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-white mt-5">
+                <span class="premium-badge px-4 py-2  rounded-pill d-inline-block mb-3">
+                    Bubble Bliss Experience
+                </span>
+                
+                <h1 class="display-3 fw-bold mb-4">
+                    Create Your 
+                    <span class="gradient-text">Dream</span> Cup<br>
+                    Of Bubble Tea
+                </h1>
+
+                <p class="hero-text mb-5 fs-5 opacity-75">
+                    Mix delicious flavors, creamy toppings, sweetness levels, 
+                    and colorful bubbles exactly the way you love.
+                </p>
+
+                <div class="d-flex gap-3 flex-wrap mb-6">
+                    <a href="customize.html" class="btn hero-btn-primary px-5 py-3 rounded-pill fw-bold">Customize Now</a>
+                    <a href="menu.html" class="btn hero-btn-outline px-5 py-3 rounded-pill fw-bold">Explore Menu</a>
+                </div>
+
+                <div class="row g-4  pt-4">
+                    <div class="col-4">
+                        <h3 class="fw-bold mb-0">50+</h3>
+                        <p class="mb-0 opacity-75">Flavors</p>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="fw-bold mb-0">25k+</h3>
+                        <p class="mb-0 opacity-75">Happy Customers</p>
+                    </div>
+                    <div class="col-4">
+                        <h3 class="fw-bold mb-0">4.9★</h3>
+                        <p class="mb-0 opacity-75">Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5  d-lg-block text-center">
+                <img src="/assets/images/customize-hero.png" alt="Custom Bubble Tea" class="img-fluid floating-animation">
+            </div>
+        </div>
+    </div>
+</section>
+    <section class="customize-section py-5 position-relative overflow-hidden" id="customize">
+
+    <!-- BLUR EFFECTS -->
+
+    <div class="custom-blur blur-1"></div>
+    <div class="custom-blur blur-2"></div>
+    <div class="container position-relative z-2">
+
+        <!-- TITLE -->        
+             <div class="text-center mb-5">
+                
+                   <span class="custom-badge">
+                Customize Your Own Flavor
+            </span>
+
+            <h2 class="customize-title fw-bold mt-4">
+
+                Customize Your
+
+                <span class="gradient-text">
+                    Dream Bubble Tea
+                </span>
+
+            </h2>
+
+            <p class="customize-subtitle mt-3">
+
+                Choose flavors, toppings, sweetness, and cup size
+                exactly the way you love.
+
+            </p>
+
+        </div>
+
+        <!-- MAIN CARD -->
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-10">
+
+                <div class="customize-card">
+
+                    <div class="row g-5 align-items-center">
+
+                        <!-- LEFT IMAGE -->
+
+                        <div class="col-lg-5">
+
+                            <div class="custom-image-box">
+
+                                <img src="/assets/images/customize.png"
+                                    class="img-fluid custom-main-img"
+                                    alt="Bubble Tea">
+
+                                <!-- FLOATING PRICE -->
+
+                                <div class="customize-badge">
+
+                                    Starting ₹180
+                                
+
+                Create Your Own Flavor
+
+        
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- RIGHT CONTENT -->
+
+                        <div class="col-lg-7">
+
+                            <!-- DRINK FLAVOR -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label custom-label">
+
+                                    Select Drink Flavor
+
+                                </label>
+
+                                <select class="form-select custom-input"
+                                    id="drinkSelect"
+                                    onchange="updatePrice()">
+
+                                    <option value="180">
+                                        Classic Milk Tea - ₹180
+                                    </option>
+
+                                    <option value="220">
+                                        Brown Sugar Boba - ₹220
+                                    </option>
+
+                                    <option value="250">
+                                        Strawberry Fruit Tea - ₹250
+                                    </option>
+
+                                    <option value="280">
+                                        Matcha Cream Latte - ₹280
+                                    </option>
+
+                                    <option value="300">
+                                        Oreo Chocolate Blast - ₹300
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- CUP SIZE -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label custom-label">
+
+                                    Choose Cup Size
+
+                                </label>
+
+                                <select class="form-select custom-input"
+                                    id="cupSize"
+                                    onchange="updatePrice()">
+
+                                    <option value="0">
+                                        Medium Cup
+                                    </option>
+
+                                    <option value="40">
+                                        Large Cup (+₹40)
+                                    </option>
+
+                                    <option value="70">
+                                        Jumbo Cup (+₹70)
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                            <!-- SWEETNESS -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label custom-label">
+
+                                    Sugar Level
+
+                                </label>
+
+                                <div class="d-flex flex-wrap gap-3">
+
+                                    <button type="button"
+                                        class="sugar-btn active">
+                                        25%
+                                    </button>
+
+                                    <button type="button"
+                                        class="sugar-btn">
+                                        50%
+                                    </button>
+
+                                    <button type="button"
+                                        class="sugar-btn">
+                                        75%
+                                    </button>
+
+                                    <button type="button"
+                                        class="sugar-btn">
+                                        100%
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                            <!-- TOPPINGS -->
+
+                            <div class="mb-4">
+
+                                <label class="form-label custom-label">
+
+                                    Premium Toppings
+
+                                </label>
+
+                                <div class="row g-3">
+
+                                    <div class="col-md-6">
+
+                                        <div class="topping-card">
+
+                                            <input class="form-check-input topping"
+                                                type="checkbox"
+                                                value="20"
+                                                onchange="updatePrice()">
+
+                                            <span>
+                                                Tapioca Pearls (+₹20)
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="topping-card">
+
+                                            <input class="form-check-input topping"
+                                                type="checkbox"
+                                                value="30"
+                                                onchange="updatePrice()">
+
+                                            <span>
+                                                Cheese Foam (+₹30)
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="topping-card">
+
+                                            <input class="form-check-input topping"
+                                                type="checkbox"
+                                                value="25"
+                                                onchange="updatePrice()">
+
+                                            <span>
+                                                Jelly Cubes (+₹25)
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+
+                                        <div class="topping-card">
+
+                                            <input class="form-check-input topping"
+                                                type="checkbox"
+                                                value="40"
+                                                onchange="updatePrice()">
+
+                                            <span>
+                                                Ice Cream Scoop (+₹40)
+                                            </span>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <!-- TOTAL PRICE -->
+
+                            <div class="total-box mt-5">
+
+                                <h2 class="fw-bold mb-4">
+
+                                    Total Price :
+
+                                    <span id="totalPrice"
+                                        class="price-text">
+
+                                        ₹180
+
+                                    </span>
+
+                                </h2>
+
+                                <button class="btn custom-order-btn rounded-pill ">
+
+                                     Order Customized Drink
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- CUSTOMIZE SECTION -->
+
+   <section class="customize-section py-5" id="customize">
+
+    <!-- FLOATING ICONS -->
+
+    <div class="custom-blur blur-1"></div>
+    <div class="custom-blur blur-2"></div>
+
+    <div class="container">
+
+        <!-- TITLE -->
+
+        <div class="text-center mb-5">
+
+            <span class="custom-badge">
+                Create Your Own Flavor
+            </span>
+
+            <h2 class="customize-title fw-bold mt-4">
+                Customize
+                <span class="gradient-text">Your Drink</span> 
+            </h2>
+
+            <p class="text-muted">
+                Select your favorite combination.
+            </p>
+
+        </div>
+
+        <div class="row g-5">
+
+            <!-- LEFT -->
+
+            <div class="col-lg-8">
+
+                <div class="customize-box">
+
+                    <!-- FLAVORS -->
+
+                    <h4 class="fw-bold mb-4">
+                        Choose Flavor
+                    </h4>
+
+                    <div class="row g-4 mb-5">
+
+                        <div class="col-md-4">
+
+                            <div class="option-card ">
+
+                                <div class="option-icon">🍓</div>
+
+                                <h5>Strawberry</h5>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="option-card">
+
+                                <div class="option-icon">🍵</div>
+
+                                <h5>Matcha</h5>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div class="option-card">
+
+                                <div class="option-icon">🧋</div>
+
+                                <h5>Brown Sugar</h5>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- TOPPINGS -->
+
+                    <h4 class="fw-bold mb-4">
+                        Select Toppings
+                    </h4>
+
+                    <div class="row g-3 mb-5">
+
+                        <div class="col-md-6">
+
+                            <div class="form-check">
+
+                                <input class="form-check-input"
+                                    type="checkbox"
+                                    checked>
+
+                                <label class="form-check-label">
+                                    Tapioca Pearls
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="form-check">
+
+                                <input class="form-check-input"
+                                    type="checkbox">
+
+                                <label class="form-check-label">
+                                    Popping Boba
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="form-check">
+
+                                <input class="form-check-input"
+                                    type="checkbox">
+
+                                <label class="form-check-label">
+                                    Jelly Cubes
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="form-check">
+
+                                <input class="form-check-input"
+                                    type="checkbox">
+
+                                <label class="form-check-label">
+                                    Cream Cheese Foam
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- SWEETNESS -->
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+
+                            <label class="mb-2 fw-semibold custom-label">
+                                Sweetness Level
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>100% Sweet</option>
+                                <option>75% Sweet</option>
+                                <option>50% Sweet</option>
+                                <option>25% Sweet</option>
+
+                            </select>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="mb-2 fw-semibold custom-label">
+                                Ice Level
+                            </label>
+
+                            <select class="form-select">
+
+                                <option>Regular Ice</option>
+                                <option>Less Ice</option>
+                                <option>No Ice</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+
+             <div class="col-lg-4">
+
+    <div class="summary-box sticky-top">
+
+        <h3 class="fw-bold mb-4">
+            Order Summary
+        </h3>
+
+        <!-- DRINK -->
+
+        <div class="summary-item">
+
+            <span>Drink</span>
+
+            <strong>Brown Sugar Tea</strong>
+
+        </div>
+
+        <!-- SIZE -->
+
+        <div class="summary-item">
+
+            <span>Size</span>
+
+            <strong>Large</strong>
+
+        </div>
+
+        <!-- SWEETNESS -->
+
+        <div class="summary-item">
+
+            <span>Sweetness</span>
+
+            <strong>75% Sweet</strong>
+
+        </div>
+
+        <!-- ICE -->
+
+        <div class="summary-item">
+
+            <span>Ice Level</span>
+
+            <strong>Less Ice</strong>
+
+        </div>
+
+        <!-- TOPPINGS -->
+
+        <div class="summary-toppings">
+
+            <h6 class="fw-bold mb-3">
+                Selected Toppings
+            </h6>
+
+            <div class="topping-pill">
+                🧋 Tapioca Pearls
+            </div>
+
+            <div class="topping-pill">
+                🍓 Popping Boba
+            </div>
+
+            <div class="topping-pill">
+                ✨ Jelly Cubes
+            </div>
+
+        </div>
+
+        <hr>
+
+        <!-- TOTAL -->
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+
+            <h4>Total</h4>
+
+            <h3 class="fw-bold">
+                ₹249
+            </h3>
+
+        </div>
+
+        <!-- BUTTON -->
+
+        <button class="btn rounded-pill w-100 py-3 fw-bold">
+
+            <i class="fa-solid fa-cart-shopping me-2"></i>
+
+            Add To Cart
+
+        </button>
+
+    </div>
+
+</div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =========================================
+     SPECIAL COMBO SECTION
+========================================= -->
+
+<section class="combo-section py-5">
+
+    <div class="container">
+
+        <!-- TITLE -->
+
+        <div class="text-center mb-5">
+
+
+            <span class="custom-badge">
+                Create Your Own Flavor
+            </span>
+
+            <h2 class="customize-title fw-bold mt-4">
+                 Signature Bubble 
+                <span class="gradient-text">Tea Combos</span> 
+            </h2>
+
+            <p class="text-muted">
+               Handpicked flavor combinations crafted for every mood.
+            </p>
+
+        
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="combo-card">
+
+                    <div class="combo-img">
+
+                        <img src="/assets/images/combo1.png"
+                            class="img-fluid"
+                            alt="Combo">
+
+                    </div>
+
+                    <div class="combo-content">
+
+                        <h4>Berry Bliss</h4>
+
+                        <p>
+                            Latte art coffee with cheesecake topped with blueberries, perfect breakfast treat.
+                        </p>
+
+                        <div class="combo-footer">
+
+                            <h5>₹249</h5>
+
+                            <button class="btn combo-btn">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="combo-card">
+
+                    <div class="combo-img">
+
+                        <img src="/assets/images/combo2.png"
+                            class="img-fluid"
+                            alt="Combo">
+
+                    </div>
+
+                    <div class="combo-content">
+
+                        <h4> Black Tea</h4>
+
+                        <p>
+                           Fresh croissants served with a steaming cup of Black tea and colorful candies
+                        </p>
+
+                        <div class="combo-footer">
+
+                            <h5>₹299</h5>
+
+                            <button class="btn combo-btn">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="combo-card">
+
+                    <div class="combo-img">
+
+                        <img src="/assets/images/combo3.png"
+                            class="img-fluid"
+                            alt="Combo">
+
+                    </div>
+
+                    <div class="combo-content">
+
+                        <h4>Hibicus Tea</h4>
+
+                        <p>
+                            herbal tea with star a Rise  and Delicious waffles with creamy chocolate hazelnut spread, topped with sugar dusting.
+                        </p>
+
+                        <div class="combo-footer">
+
+                            <h5>₹329</h5>
+
+                            <button class="btn combo-btn">
+                                Order Now
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+ 
+<footer class="footer-section">
+
+   <div class="container">
+
+    <div class="row g-4">
+
+        <!-- BRAND -->
+        <div class="col-lg-3 col-md-6">
+
+            <h3 class="footer-logo">
+                🧋 Bubble Bliss
+            </h3>
+
+            <p class="footer-text">
+                Premium handcrafted bubble tea made with love, freshness, and creativity.
+                Experience authentic flavors, quality ingredients, and refreshing drinks every day.
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Quick Links
+            </h5>
+
+            <ul class="footer-links list-unstyled">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About Us</a></li>
+
+                <li><a href="#menu">Our Menu</a></li>
+
+                <li><a href="#gallery">Gallery</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Contact Us
+            </h5>
+
+            <p>
+                <i class="fa-solid fa-location-dot me-2"></i>
+                Saravanampatti, Coimbatore
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone me-2"></i>
+                +91 98765 43210
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope me-2"></i>
+                hello@bubblebliss.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock me-2"></i>
+                Mon - Sun: 10:00 AM - 11:00 PM
+            </p>
+
+        </div>
+
+        <!-- LOCATION -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Find Us
+            </h5>
+
+            <iframe
+                src="https://www.google.com/maps?q=Barrocco+Bubble+Tea+Cafe+Coimbatore&output=embed"
+                width="100%"
+                height="220"
+                style="border:0;border-radius:15px;"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- NEWSLETTER -->
+    <div class="row align-items-center g-3 mt-2">
+
+        <div class="col-lg-6">
+
+            <h5 class="footer-title mb-2">
+                Subscribe For Updates
+            </h5>
+
+            <p class="mb-0">
+                Get updates about new drinks, offers, and special discounts.
+            </p>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="input-group">
+
+                <input type="email"
+                       class="form-control"
+                       placeholder="Enter your email">
+
+                <button class="btn btn-main">
+                    Subscribe
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- SOCIAL -->
+    <div class="text-center">
+
+        <div class="footer-social">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="text-center mt-3">
+
+        <p class="footer-bottom">
+            © 2026 <span>Bubble Bliss</span>. All Rights Reserved.
+        </p>
+
+        <small>
+            Designed with ❤️ for Bubble Tea Lovers
+        </small>
+
+    </div>
+
+</div>
+
+</footer>
+
+    <!-- BOOTSTRAP -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- THEME SCRIPT -->
+
+    <script>
+
+        const htmlTag = document.documentElement;
+
+        const bootstrapLink = document.getElementById("bootstrap-css");
+
+        const themeToggle = document.getElementById("themeToggle");
+
+        const rtlToggle = document.getElementById("rtlToggle");
+
+        /* LOAD THEME */
+
+        const savedTheme = localStorage.getItem("theme") || "light";
+        htmlTag.setAttribute("data-bs-theme", savedTheme);
+
+        /* LOAD RTL */
+
+        const savedDir = localStorage.getItem("direction") || "ltr";
+        htmlTag.setAttribute("dir", savedDir);
+
+        if(savedDir === "rtl"){
+
+            bootstrapLink.href =
+            "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css";
+
+            rtlToggle.innerHTML = "LTR";
+
+        }
+
+        /* THEME TOGGLE */
+
+        themeToggle.addEventListener("click",()=>{
+
+            const newTheme =
+            htmlTag.getAttribute("data-bs-theme") === "light"
+            ? "dark"
+            : "light";
+
+            htmlTag.setAttribute("data-bs-theme",newTheme);
+
+            localStorage.setItem("theme",newTheme);
+
+        });
+
+        /* RTL TOGGLE */
+
+        rtlToggle.addEventListener("click",()=>{
+
+            const newDir =
+            htmlTag.getAttribute("dir") === "ltr"
+            ? "rtl"
+            : "ltr";
+
+            htmlTag.setAttribute("dir",newDir);
+
+            localStorage.setItem("direction",newDir);
+
+            if(newDir === "rtl"){
+
+                bootstrapLink.href =
+                "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css";
+
+                rtlToggle.innerHTML = "LTR";
+
+            }else{
+
+                bootstrapLink.href =
+                "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css";
+
+                rtlToggle.innerHTML = "RTL";
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
+
+<!-- =========================================
+     PREMIUM CUSTOMIZE SECTION
+========================================= -->
+
+
+
+<!-- =========================================
+     CSS
+========================================= -->
+
+
+
+<!-- =========================================
+     SCRIPT
+========================================= -->
+
+<script>
+
+function updatePrice(){
+
+    let drinkPrice =
+        parseInt(document.getElementById("drinkSelect").value);
+
+    let cupPrice =
+        parseInt(document.getElementById("cupSize").value);
+
+    let total =
+        drinkPrice + cupPrice;
+
+    let toppings =
+        document.querySelectorAll(".topping");
+
+    toppings.forEach((item)=>{
+
+        if(item.checked){
+
+            total += parseInt(item.value);
+
+        }
+
+    });
+
+    document.getElementById("totalPrice").innerText =
+        "₹" + total;
+
+}
+
+/* SUGAR BUTTON ACTIVE */
+
+const sugarBtns =
+    document.querySelectorAll(".sugar-btn");
+
+sugarBtns.forEach((btn)=>{
+
+    btn.addEventListener("click",()=>{
+
+        sugarBtns.forEach((b)=>{
+
+            b.classList.remove("active");
+
+        });
+
+        btn.classList.add("active");
+
+    });
+
+});
+
+</script>

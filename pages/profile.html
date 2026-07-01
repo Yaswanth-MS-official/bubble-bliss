@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bubble Bliss Profile</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+
+    
+        <link rel="stylesheet" href="/assets/css/side.css">
+<link rel="icon" type="image/x-icon" href="/assets/favicons/latte-art.png">
+    <style>
+
+        /* ================= MOBILE SIDEBAR FIX ================= */
+
+
+       /* =========================================
+   SIDEBAR MINIMIZE
+========================================= */
+
+.sidebar.minimized{
+
+    width:90px;
+
+}
+
+/* HIDE TEXT */
+
+.sidebar.minimized .logo,
+.sidebar.minimized .menu-title,
+.sidebar.minimized .sidebar-menu span{
+
+    display:none;
+
+}
+
+/* CENTER ICONS */
+
+.sidebar.minimized .sidebar-menu a{
+
+    justify-content:center;
+
+}
+
+/* MAIN CONTENT EXPAND */
+
+.main-content.expanded{
+
+    margin-left:90px;
+    width:calc(100% - 90px);
+
+}
+
+        *{
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            margin:0;
+            background:#f5f7fb;
+            overflow-x:hidden;
+            transition:0.3s;
+        }
+
+        .app{
+            display:flex;
+            min-height:100vh;
+        }
+
+@media (max-width: 991px) {
+
+    .sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        height: 100vh;
+        width: 280px;
+        transition: 0.3s ease;
+        z-index: 9999;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    /* floating toggle button visible on mobile */
+    .toggle-btn {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 10000;
+    }
+}
+
+        /* ================= DARK MODE FIX ================= */
+
+[data-bs-theme="dark"] body {
+    background: #121212 !important;
+}
+
+/* Card */
+[data-bs-theme="dark"] .profile-card {
+    background: #1f1f1f !important;
+    color: #fff !important;
+}
+
+/* Body section */
+[data-bs-theme="dark"] .profile-body {
+    background: #1f1f1f !important;
+    color: #fff !important;
+}
+
+/* Section titles */
+[data-bs-theme="dark"] .section-title {
+    color: #fff !important;
+}
+
+/* Inputs */
+[data-bs-theme="dark"] .form-control {
+    background: #2b2b2b !important;
+    color: #fff !important;
+    border: 1px solid #444 !important;
+}
+
+/* Sidebar text */
+[data-bs-theme="dark"] .sidebar {
+    background: #1f1f1f !important;
+}
+
+[data-bs-theme="dark"] .sidebar-menu a {
+    color: #ddd !important;
+}
+
+/* Profile name text */
+[data-bs-theme="dark"] .profile-name,
+[data-bs-theme="dark"] .profile-role {
+    color: #fff !important;
+}
+
+        *{
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background:#f5f7fb;
+            margin:0;
+            overflow-x:hidden;
+        }
+
+        .app{
+            display:flex;
+            min-height:100vh;
+        }
+
+        /* SIDEBAR */
+
+      
+
+        .sidebar.show{
+            left:0;
+        }
+
+       
+        .menu-title{
+            font-size:12px;
+            color:#999;
+            margin-bottom:15px;
+            font-weight:600;
+        }
+
+        .sidebar-menu{
+            list-style:none;
+            padding:0;
+            margin:0;
+        }
+
+        .sidebar-menu li{
+            margin-bottom:10px;
+        }
+
+        .sidebar-menu a{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            padding:14px 16px;
+            border-radius:14px;
+            text-decoration:none;
+            color:#444;
+            transition:0.3s;
+            font-weight:500;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active{
+            background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+            color:#fff;
+        }
+
+      
+
+        /* MAIN */
+
+     
+        /* PROFILE */
+
+        .profile-card{
+            background:#fff;
+            border-radius:30px;
+            overflow:hidden;
+            margin:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .profile-top{
+            background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+            padding:50px 20px;
+            text-align:center;
+            color:#fff;
+            position:relative;
+        }
+
+        .profile-img-box{
+            width:150px;
+            height:150px;
+            margin:auto;
+            position:relative;
+        }
+
+        .profile-img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            border-radius:50%;
+            border:6px solid #fff;
+        }
+
+        .camera-btn{
+            position:absolute;
+            bottom:5px;
+            right:5px;
+            width:42px;
+            height:42px;
+            border-radius:50%;
+            border:none;
+            background:#000000;
+            color:#7c4dff;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+            cursor:pointer;
+        }
+
+        .profile-name{
+            font-size:30px;
+            font-weight:700;
+            margin-top:20px;
+        }
+
+        .profile-role{
+            opacity:0.9;
+        }
+
+        .profile-body{
+            padding:40px;
+        }
+
+        .section-title{
+            font-size:22px;
+            font-weight:700;
+            margin-bottom:25px;
+            color:#222;
+        }
+
+        .form-control{
+            height:55px;
+            border-radius:15px;
+            border:1px solid #ddd;
+            padding-left:18px;
+        }
+
+        textarea.form-control{
+            height:auto;
+            padding-top:15px;
+        }
+
+        .form-control:focus{
+            box-shadow:none;
+            border-color:#7c4dff;
+        }
+
+        .save-btn{
+            background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+            border:none;
+            color:#fff;
+            padding:14px 35px;
+            border-radius:50px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .save-btn:hover{
+            transform:translateY(-3px);
+        }
+
+        @media(max-width:991px){
+
+            .sidebar{
+                left:-280px;
+            }
+
+            .sidebar.show{
+                left:0;
+            }
+
+            .main-content{
+                margin-left:0;
+                width:100%;
+            }
+
+        }
+
+        @media(max-width:768px){
+
+            .profile-body{
+                padding:25px;
+            }
+
+            .profile-name{
+                font-size:24px;
+            }
+
+        }
+
+    </style>
+
+    <style>
+       /* =========================================
+   SIDEBAR MINIMIZE
+========================================= */
+
+.sidebar.minimized{
+
+    width:90px;
+
+}
+
+/* HIDE TEXT */
+
+.sidebar.minimized .logo,
+.sidebar.minimized .menu-title,
+.sidebar.minimized .sidebar-menu span{
+
+    display:none;
+
+}
+
+/* CENTER ICONS */
+
+.sidebar.minimized .sidebar-menu a{
+
+    justify-content:center;
+
+}
+
+/* MAIN CONTENT EXPAND */
+
+.main-content.expanded{
+
+    margin-left:90px;
+    width:calc(100% - 90px);
+
+}
+
+        *{
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            margin:0;
+            background:#f5f7fb;
+            overflow-x:hidden;
+            transition:0.3s;
+        }
+
+        .app{
+            display:flex;
+            min-height:100vh;
+        }
+        /* ORDER SECTION */
+
+.sidebar-section{
+    margin-top: 25px;
+}
+
+/* MENU TITLE */
+
+.menu-title{
+    font-size: 13px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* SIDEBAR MENU */
+
+.sidebar-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li{
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a{
+    text-decoration: none;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 14px 18px;
+    border-radius: 18px;
+    transition: .3s;
+    font-weight: 500;
+}
+
+/* HOVER */
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+    background: linear-gradient(135deg,#ff4fa3,#7c4dff);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+/* ICON */
+
+.sidebar-menu i{
+    width: 22px;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* DARK MODE */
+
+[data-bs-theme="dark"] .menu-title{
+    color: #aaa;
+}
+
+[data-bs-theme="dark"] .sidebar-menu a{
+    color: #ddd;
+}
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            background: #f7f5ff;
+            overflow-x: hidden;
+        }
+
+        :root{
+            --primary:#ff4fa3;
+            --secondary:#7c4dff;
+            --dark:#1f1f1f;
+            --light:#ffffff;
+        }
+
+        /* =========================================
+           SIDEBAR
+        ========================================= */
+
+    
+
+      
+        .sidebar-menu{
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar-menu li{
+            margin-bottom: 12px;
+        }
+
+        .sidebar-menu a{
+            text-decoration: none;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 18px;
+            border-radius: 18px;
+            transition: .3s;
+            font-weight: 500;
+        }
+
+        .sidebar-menu a:hover,
+        .sidebar-menu .active{
+            background: linear-gradient(135deg,var(--primary),var(--secondary));
+            color: #fff;
+        }
+
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+      
+
+        /* =========================================
+           TOPBAR
+        ========================================= */
+
+        .topbar{
+            background: #fff;
+            padding: 18px 25px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .search-box{
+            width: 350px;
+            position: relative;
+        }
+
+        .search-box input{
+            width: 100%;
+            height: 52px;
+            border: none;
+            background: #f4f4f4;
+            border-radius: 50px;
+            padding: 0 50px 0 20px;
+            outline: none;
+        }
+
+        .search-box i{
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            color: #777;
+        }
+
+        .admin-box{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .admin-box img{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           HERO SECTION
+        ========================================= */
+
+        .hero-dashboard{
+            background: linear-gradient(135deg,#ff69b4,#7c4dff);
+            padding: 50px;
+            border-radius: 35px;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .hero-dashboard::before{
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,.08);
+            border-radius: 50%;
+            top: -120px;
+            right: -120px;
+        }
+
+        .hero-badge{
+            background: rgba(255,255,255,.15);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title{
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-top: 25px;
+            line-height: 1.2;
+        }
+
+        .hero-title span{
+            color: #ffe082;
+        }
+
+        .hero-subtitle{
+            margin-top: 15px;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 650px;
+            color: rgba(255,255,255,.9);
+        }
+
+        .hero-buttons{
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn-primary{
+            background: #fff;
+            color: #7c4dff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 30px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .hero-btn-outline{
+            border: 2px solid rgba(255,255,255,.4);
+            color: #fff;
+            border-radius: 50px;
+            padding: 14px 30px;
+            font-weight: 600;
+        }
+
+        .hero-dashboard img{
+            max-height: 320px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,.2);
+        }
+
+        /* =========================================
+           DASHBOARD CARDS
+        ========================================= */
+
+        .dashboard-card{
+            background: #fff;
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+            transition: .4s;
+            height: 100%;
+        }
+
+        .dashboard-card:hover{
+            transform: translateY(-8px);
+        }
+
+        .icon-box{
+            width: 75px;
+            height: 75px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .pink{
+            background: linear-gradient(135deg,#ff4fa3,#ff8cc7);
+        }
+
+        .purple{
+            background: linear-gradient(135deg,#7c4dff,#aa8cff);
+        }
+
+        .orange{
+            background: linear-gradient(135deg,#ff9800,#ffc46b);
+        }
+
+        .blue{
+            background: linear-gradient(135deg,#29b6f6,#74d8ff);
+        }
+
+        /* =========================================
+           CHART
+        ========================================= */
+
+        .chart-box{
+            background: #fff;
+            border-radius: 30px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .chart-placeholder{
+            height: 300px;
+            border-radius: 25px;
+            background: linear-gradient(180deg,
+                    rgba(255,79,163,.2),
+                    rgba(124,77,255,.05));
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-line{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        /* =========================================
+           TABLE
+        ========================================= */
+
+        .order-table{
+            background: #fff;
+            border-radius: 30px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        table{
+            width: 100%;
+        }
+
+        table tr{
+            border-bottom: 1px solid #eee;
+        }
+
+        table td{
+            padding: 18px 0;
+        }
+
+        .status{
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .completed{
+            background: #d4f8e8;
+            color: #00a651;
+        }
+
+        .pending{
+            background: #ffe0ea;
+            color: #ff4fa3;
+        }
+
+        /* =========================================
+           TOP DRINKS
+        ========================================= */
+
+        .drink-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .drink-item img{
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           REVIEWS
+        ========================================= */
+
+        .review-item{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .review-user{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           DARK MODE
+        ========================================= */
+
+        [data-bs-theme="dark"] body{
+            background: #121212;
+        }
+
+        [data-bs-theme="dark"] .sidebar,
+        [data-bs-theme="dark"] .topbar,
+        [data-bs-theme="dark"] .dashboard-card,
+        [data-bs-theme="dark"] .chart-box,
+        [data-bs-theme="dark"] .order-table{
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        [data-bs-theme="dark"] .search-box input{
+            background: #2b2b2b;
+            color: #fff;
+        }
+
+        [data-bs-theme="dark"] .sidebar-menu a{
+            color: #ddd;
+        }
+
+        [data-bs-theme="dark"] table tr,
+        [data-bs-theme="dark"] .drink-item,
+        [data-bs-theme="dark"] .review-item{
+            border-color: #333;
+        }
+
+        [data-bs-theme="dark"] .text-muted{
+            color: #cfcfcf !important;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width:991px){
+
+            .sidebar{
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content{
+                margin-left: 0;
+            }
+
+            .topbar{
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .search-box{
+                width: 100%;
+            }
+
+            .hero-title{
+                font-size: 2.3rem;
+            }
+
+        }
+        @media (max-width: 991px) {
+    /* Hide the sidebar off-screen by default */
+    .sidebar {
+        position: fixed;
+        left: -280px; 
+        width: 280px;
+        transition: 0.3s ease-in-out;
+        z-index: 9999;
+    }
+
+    /* When the .show class is added via JS, slide it in */
+    .sidebar.show {
+        left: 0;
+    }
+
+    /* Ensure main content takes full width without margins */
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+
+        /* =========================================
+   SIDEBAR MENU SECTION
+========================================= */
+
+.menu-section{
+    margin-bottom: 25px;
+}
+
+.menu-title{
+    font-size: 13px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li{
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a{
+    text-decoration: none;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 18px;
+    border-radius: 18px;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+    background: linear-gradient(135deg,#ff4fa3,#7c4dff);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.sidebar-menu i{
+    font-size: 18px;
+    width: 22px;
+}
+
+/* DARK MODE */
+
+[data-bs-theme="dark"] .menu-title{
+    color: #aaa;
+}
+
+[data-bs-theme="dark"] .sidebar-menu a{
+    color: #ddd;
+}
+    
+
+
+
+
+
+/* ================= GLOBAL ================= */
+body{
+    margin:0;
+    font-family:Arial;
+    background:#fff7fb;
+}
+
+/* ================= SIDEBAR ================= */
+.menu-section{
+    margin-bottom: 25px;
+}
+
+.menu-title{
+    font-size: 13px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li{
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a{
+    text-decoration: none;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 18px;
+    border-radius: 18px;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+    background: linear-gradient(135deg,#ff4fa3,#7c4dff);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.sidebar-menu i{
+    font-size: 18px;
+    width: 22px;
+}
+
+/* DARK MODE */
+
+[data-bs-theme="dark"] .menu-title{
+    color: #aaa;
+}
+
+[data-bs-theme="dark"] .sidebar-menu a{
+    color: #ddd;
+}
+
+/* ================= APP WRAPPER ================= */
+
+
+/* ================= HERO ================= */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px;
+    margin:20px;
+    border-radius:20px;
+    background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+    color:white;
+}
+
+.hero-text h1{
+    font-size:34px;
+    font-weight:800;
+}
+
+.hero-text p{
+    opacity:0.9;
+}
+
+.hero-text input{
+    margin-top:15px;
+    padding:12px;
+    width:250px;
+    border:none;
+    border-radius:10px;
+    outline:none;
+}
+
+
+
+
+
+/* ================= MENU ================= */
+.content{
+    padding:20px;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#fff;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.btn-pink{
+    background:#ff4fa3;
+    color:white;
+    width:100%;
+    border:none;
+    padding:10px;
+    border-radius:10px;
+    margin-top:10px;
+    transition:0.3s ease;
+    cursor:pointer;
+}
+
+.btn-pink:hover{
+    background:#7c4dff;
+    color:white;
+    transform:translateY(-2px);
+    box-shadow:0 8px 15px rgba(0,0,0,0.15);
+}
+/* ================= CART ================= */
+.cart-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#ff69b4;
+    border:none;
+    padding:15px;
+    border-radius:50%;
+    color:white;
+    font-size:18px;
+}
+
+.cart-box{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.cart-content{
+    background:white;
+    width:90%;
+    max-width:420px;
+    margin:80px auto;
+    padding:20px;
+    border-radius:15px;
+}
+/* =========================
+   PROFILE PAGE
+========================= */
+
+.container-fluid{
+    padding:10px;
+}
+
+.profile-card{
+    max-width:1000px;
+    margin:10px ;
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.profile-top{
+    text-align:center;
+    padding:40px 20px;
+    background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+    color:#fff;
+}
+
+.profile-img-box{
+    position:relative;
+    width:140px;
+    margin:auto;
+}
+
+.profile-img{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #fff;
+}
+
+.camera-btn{
+    position:absolute;
+    bottom:5px;
+    right:5px;
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    background:#fff;
+    color:#ff4fa3;
+    cursor:pointer;
+}
+
+.profile-name{
+    margin-top:15px;
+    font-weight:700;
+}
+
+.profile-role{
+    opacity:.9;
+}
+
+.profile-body{
+    padding:30px;
+}
+
+.section-title{
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.form-control{
+    height:50px;
+    border-radius:12px;
+}
+
+textarea.form-control{
+    height:auto;
+}
+
+.save-btn{
+    background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+    color:#fff;
+    border:none;
+    padding:14px 35px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.save-btn:hover{
+    transform:translateY(-3px);
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+[data-bs-theme="dark"] .profile-card{
+    background:#1f2937;
+    color:#fff;
+}
+
+[data-bs-theme="dark"] .form-control{
+    background:#111827;
+    color:#fff;
+    border:1px solid #374151;
+}
+
+[data-bs-theme="dark"] .form-control::placeholder{
+    color:#9ca3af;
+}
+
+[data-bs-theme="dark"] textarea{
+    color:#fff;
+}
+
+/* =========================
+   MOBILE VIEW
+========================= */
+
+@media (max-width:768px){
+
+    .container-fluid{
+        padding:12px;
+    }
+
+    .profile-card{
+        border-radius:20px;
+    }
+
+    .profile-top{
+        padding:30px 15px;
+    }
+
+    .profile-img-box{
+        width:100px;
+    }
+
+    .profile-img{
+        width:100px;
+        height:100px;
+    }
+
+    .camera-btn{
+        width:35px;
+        height:35px;
+        font-size:14px;
+    }
+
+    .profile-name{
+        font-size:22px;
+    }
+
+    .profile-role{
+        font-size:14px;
+    }
+
+    .profile-body{
+        padding:20px 15px;
+    }
+
+    .section-title{
+        font-size:20px;
+    }
+
+    .save-btn{
+        width:100%;
+    }
+
+    .toggle-btn{
+        position:fixed;
+        top:15px;
+        left:15px;
+        z-index:9999;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width:480px){
+
+    .profile-name{
+        font-size:20px;
+    }
+
+    .profile-role{
+        font-size:13px;
+    }
+
+    .form-control{
+        height:48px;
+        font-size:14px;
+    }
+
+    textarea.form-control{
+        min-height:120px;
+    }
+
+    .save-btn{
+        padding:12px;
+        font-size:15px;
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ================= SIDEBAR ================= -->
+  
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar show"
+         id="sidebar">
+
+        <div class="logo">
+         <i class="fa-solid fa-mug-hot brand-icon"></i>
+
+            <span>Bubble Bliss</span>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="d-flex gap-2 mb-4">
+
+            <button class="btn nav-action-btn flex-fill"
+                    id="themeToggle">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+            <button class="btn nav-action-btn flex-fill"
+                    id="rtlToggle">
+
+                RTL
+
+            </button>
+
+        </div>
+
+        <!-- MAIN MENU -->
+
+        <div class="menu-section">
+
+            <h6 class="menu-title">
+                MAIN MENU
+            </h6>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html"
+                       class="active">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="order.html">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>
+                            Orders
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="customer.html">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <span>
+                            Customers
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="drinks.html">
+
+                        <i class="fa-solid fa-mug-hot"></i>
+
+                        <span>
+                            Drinks
+                        </span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- SETTINGS -->
+
+        <div class="menu-section mt-4">
+
+            <h6 class="menu-title">
+                SETTINGS
+            </h6>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="profile.html">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <span>
+                            Profile
+                        </span>
+
+                    </a>
+                </li>
+
+               
+
+                <li>
+                    <a href="login.html">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        <span>
+                            Logout
+                        </span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+          
+
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+
+        <button class="toggle-btn"
+                    onclick="toggleSidebar()">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+
+            <div class="container-fluid">
+                
+
+                <div class="profile-card">
+                  
+
+                    <!-- TOP -->
+
+                    <div class="profile-top">
+
+                        <div class="profile-img-box">
+
+                            <img src="/assets/images/adminprofile.png"
+                                class="profile-img"
+                                id="profilePreview">
+
+                            <label class="camera-btn d-flex justify-content-center align-items-center">
+
+                                <i class="fa-solid fa-camera"></i>
+
+                                <input type="file"
+                                    id="profileInput"
+                                    hidden>
+
+                            </label>
+
+                        </div>
+
+                        <h2 class="profile-name" id="displayName">
+                            Admin Yaswanth
+                        </h2>
+
+                        <p class="profile-role">
+                            Boba Bliss Administrator
+                        </p>
+
+                    </div>
+
+                    <!-- BODY -->
+
+                    <div class="profile-body">
+
+                        <!-- PROFILE DETAILS -->
+
+                        <h4 class="section-title">
+                            Profile Information
+                        </h4>
+
+                        <div class="row g-4">
+<div class="col-lg-6 col-md-6 col-12">
+
+                                <label class="form-label fw-semibold">
+                                    Admin Name
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="adminName"
+                                    value="Admin Yaswanth">
+
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12">
+
+                                <label class="form-label fw-semibold">
+                                    Email Address
+                                </label>
+
+                                <input type="email"
+                                    class="form-control"
+                                    value="admin@bobabliss.com">
+
+                            </div>
+
+                        </div>
+
+                        <!-- STORE INFORMATION -->
+
+                        <div class="mt-5">
+
+                            <h4 class="section-title">
+                                Store Information
+                            </h4>
+
+                            <div class="row g-4">
+
+                                <div class="col-lg-6 col-md-6 col-12">
+
+                                    <label class="form-label fw-semibold">
+                                        Store Name
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        value="Boba Bliss">
+
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-12">
+
+                                    <label class="form-label fw-semibold">
+                                        Phone Number
+                                    </label>
+
+                                    <input type="tel"
+                                        class="form-control"
+                                        value="+91 9876543210">
+
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-12">
+
+                                    <label class="form-label fw-semibold">
+                                        Store Location
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        value="Chennai, Tamil Nadu">
+
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-12">
+
+                                    <label class="form-label fw-semibold">
+                                        Opening Hours
+                                    </label>
+
+                                    <input type="text"
+                                        class="form-control"
+                                        value="10:00 AM - 11:00 PM">
+
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-12">
+
+                                    <label class="form-label fw-semibold">
+                                        Store Description
+                                    </label>
+
+                                    <textarea class="form-control"
+                                        rows="5">Premium Bubble Tea & Boba Shop Dashboard Management System.</textarea>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- SAVE -->
+
+                        <div class="mt-5 text-center">
+
+                            <button class="save-btn" onclick="updateProfile()">
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Bootstrap -->
+<script src="/assets/js/side.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <script>
+
+const profileInput = document.getElementById('profileInput');
+const profilePreview = document.getElementById('profilePreview');
+
+const adminName = document.getElementById('adminName');
+const displayName = document.getElementById('displayName');
+
+/* IMAGE PREVIEW */
+
+profileInput.addEventListener('change', function () {
+
+    const file = this.files[0];
+
+    if (file) {
+
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+
+            profilePreview.src = e.target.result;
+
+            /* SAVE IMAGE */
+
+            localStorage.setItem(
+                "adminProfileImage",
+                e.target.result
+            );
+
+        }
+
+        reader.readAsDataURL(file);
+
+    }
+
+});
+
+/* LIVE NAME */
+
+adminName.addEventListener('keyup', function () {
+
+    displayName.innerText = this.value;
+
+});
+
+/* SAVE PROFILE */
+
+function updateProfile() {
+
+    localStorage.setItem(
+        "adminName",
+        adminName.value
+    );
+
+    alert('Profile Updated Successfully');
+
+}
+
+/* LOAD SAVED DATA */
+
+window.onload = function () {
+
+    const savedName =
+        localStorage.getItem("adminName");
+
+    const savedImage =
+        localStorage.getItem("adminProfileImage");
+
+    if(savedName){
+
+        adminName.value = savedName;
+        displayName.innerText = savedName;
+
+    }
+
+    if(savedImage){
+
+        profilePreview.src = savedImage;
+
+    }
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

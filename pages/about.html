@@ -1,0 +1,1866 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bubble Bliss | About Us</title>
+
+    <!-- BOOTSTRAP -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- GOOGLE FONT -->
+<link rel="icon" type="image/x-icon" href="/assets/favicons/latte-art.png">
+
+<link rel="stylesheet" href="/assets/css/style.css">
+   <style>
+    
+   /* BACKGROUND GLOWS */
+.about-lux { position: relative; overflow: hidden; }
+.about-glow {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    filter: blur(120px);
+    border-radius: 50%;
+    z-index: 1;
+}
+.glow-a { top: -100px; left: -100px; background: rgba(255, 107, 107, 0.2); }
+.glow-b { bottom: -100px; right: -100px; background: rgba(107, 185, 255, 0.2); }
+
+/* GALLERY STYLING */
+.about-gallery { display: flex; flex-direction: column; gap: 15px; }
+.gallery-main img {
+    width: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+.gallery-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+.gallery-row img {
+    width: 100%;
+    border-radius: 12px;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+/* TEXT & TAGS */
+.about-tag {
+    background: rgba(255, 107, 107, 0.1);
+    color: #ff6b6b;
+    font-weight: 600;
+    display: inline-block;
+}
+
+
+/* INFO BOXES */
+.about-extra {
+    display: grid;
+    gap: 20px;
+}
+.info-box {
+    padding: 15px;
+    border-left: 3px solid #ff6b6b;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0 10px 10px 0;
+}
+.info-box h5 { margin-bottom: 5px; font-weight: bold; }
+/*==================================
+TEAM SECTION
+==================================*/
+
+.team-section{
+    padding:100px 0;
+    background:#f8fafc;
+    transition:.4s;
+}
+
+/* Section Heading */
+
+.feature-tag{
+    display:inline-block;
+    background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+    color:#fff;
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.gradient-text{
+    background:linear-gradient(135deg,#3b82f6,#8b5cf6,#ec4899);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.section-subtitle{
+    max-width:650px;
+    margin:auto;
+    color:#64748b;
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+
+
+
+
+
+/*=========================
+    TEAM SECTION
+=========================*/
+
+.team-section{
+    padding:100px 0;
+    background:#f8fafc;
+    transition:.4s;
+}
+
+[data-bs-theme="dark"] .team-section{
+    background:#0f172a;
+}
+
+/* Heading */
+
+.feature-tag{
+    display:inline-block;
+    background:#ffe9d6;
+    color:#ff7b00;
+    font-weight:600;
+    letter-spacing:.5px;
+    transition:.3s;
+}
+
+[data-bs-theme="dark"] .feature-tag{
+    background:rgba(255,123,0,.12);
+    color:#ffb34d;
+}
+
+.gradient-text{
+
+    background:linear-gradient(90deg,#ff7b00,#ff4d6d);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+
+}
+
+.section-subtitle{
+
+    max-width:650px;
+    margin:auto;
+    color:#64748b;
+    line-height:1.8;
+
+}
+
+[data-bs-theme="dark"] .section-subtitle{
+
+    color:#94a3b8;
+
+}
+
+/*=========================
+      TEAM CARD
+=========================*/
+
+.team-card{
+
+    position:relative;
+    text-align:center;
+
+    border-radius:28px;
+
+    padding:30px 25px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    background:#ffffff;
+
+    border:1px solid rgba(0,0,0,.06);
+
+    box-shadow:
+        0 15px 40px rgba(15,23,42,.06);
+
+}
+
+[data-bs-theme="dark"] .team-card{
+
+    background:rgba(30,41,59,.55);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.35);
+
+}
+
+/* Gradient Glow */
+
+.team-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(135deg,
+    rgba(255,123,0,.08),
+    rgba(255,77,109,.08));
+
+    opacity:0;
+
+    transition:.5s;
+
+}
+
+.team-card:hover::before{
+
+    opacity:1;
+
+}
+
+.team-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:
+    0 25px 55px rgba(255,123,0,.18);
+
+}
+
+/*=========================
+     IMAGE
+=========================*/
+
+.team-image{
+
+    width:120px;
+
+    height:120px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    border:6px solid #fff;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+}
+
+[data-bs-theme="dark"] .team-image{
+
+    border:6px solid #1e293b;
+
+}
+
+.team-image img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.team-card:hover .team-image{
+
+    transform:scale(1.08);
+
+}
+
+.team-card:hover img{
+
+    transform:scale(1.12);
+
+}
+
+/*=========================
+    CONTENT
+=========================*/
+
+.team-content{
+
+    margin-top:25px;
+
+}
+
+.team-content h4{
+
+    font-weight:700;
+    margin-bottom:6px;
+    color:#0f172a;
+
+}
+
+[data-bs-theme="dark"] .team-content h4{
+
+    color:#fff;
+
+}
+
+.team-content span{
+
+    display:inline-block;
+
+    font-size:.95rem;
+
+    color:#ff7b00;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+}
+
+.team-content p{
+
+    color:#64748b;
+
+    line-height:1.8;
+
+    font-size:15px;
+
+    margin-bottom:25px;
+
+}
+
+[data-bs-theme="dark"] .team-content p{
+
+    color:#94a3b8;
+
+}
+
+/*=========================
+   SOCIAL ICONS
+=========================*/
+
+.team-social{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+}
+
+.team-social a{
+
+    width:44px;
+    height:44px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    text-decoration:none;
+
+    font-size:16px;
+
+    color:#ff7b00;
+
+    background:#fff7ef;
+
+    transition:.35s;
+
+}
+
+[data-bs-theme="dark"] .team-social a{
+
+    background:#1e293b;
+
+    color:#ffb34d;
+
+}
+
+.team-social a:hover{
+
+    background:linear-gradient(135deg,#ff7b00,#ff4d6d);
+
+    color:#fff;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 30px rgba(255,123,0,.35);
+
+}
+
+/*=========================
+   RESPONSIVE
+=========================*/
+
+@media(max-width:991px){
+
+.team-card{
+
+margin-bottom:20px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.team-card{
+
+padding:25px;
+
+}
+
+.team-image{
+
+width:105px;
+height:105px;
+
+}
+
+.team-content h4{
+
+font-size:1.2rem;
+
+}
+
+}
+.premium-cta{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:80px;
+
+    border-radius:40px;
+
+    background:linear-gradient(135deg,#fff,#fff7ef);
+
+    border:1px solid rgba(0,0,0,.06);
+
+    box-shadow:
+        0 30px 80px rgba(15,23,42,.08);
+
+}
+
+[data-bs-theme="dark"] .premium-cta{
+
+    background:linear-gradient(135deg,#1e293b,#0f172a);
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+.premium-cta::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+
+    height:500px;
+
+    border-radius:50%;
+
+    background:radial-gradient(rgba(255,123,0,.18),transparent 70%);
+
+    top:-220px;
+
+    right:-180px;
+
+}
+
+.premium-badge{
+
+    display:inline-block;
+
+    padding:10px 20px;
+
+    border-radius:50px;
+
+    background:#fff2df;
+
+    color:#ff7b00;
+
+    font-weight:600;
+
+}
+
+[data-bs-theme="dark"] .premium-badge{
+
+    background:rgba(255,123,0,.12);
+
+}
+
+.premium-cta h2{
+
+    color:#0f172a;
+
+}
+
+[data-bs-theme="dark"] .premium-cta h2{
+
+    color:white;
+
+}
+
+.premium-cta p{
+
+    color:#64748b;
+
+}
+
+[data-bs-theme="dark"] .premium-cta p{
+
+    color:#cbd5e1;
+
+}
+
+.btn-premium{
+
+    background:linear-gradient(135deg,#ff7b00,#ff4d6d);
+
+    color:white;
+
+    padding:15px 35px;
+
+    border-radius:60px;
+
+    font-weight:600;
+
+}
+
+.btn-premium:hover{
+
+    transform:translateY(-5px);
+
+    color:white;
+
+    box-shadow:0 20px 40px rgba(255,123,0,.35);
+
+}
+
+.btn-outline-premium{
+
+    border:2px solid #ff7b00;
+
+    color:#ff7b00;
+
+    border-radius:60px;
+
+    padding:15px 35px;
+
+}
+
+.btn-outline-premium:hover{
+
+    background:#ff7b00;
+
+    color:white;
+
+}
+
+.premium-image{
+
+    position:relative;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    box-shadow:0 30px 60px rgba(0,0,0,.18);
+
+}
+
+.premium-image img{
+
+    transition:.6s;
+
+}
+
+.premium-image:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.premium-stats{
+
+    display:flex;
+
+    gap:45px;
+
+}
+
+.premium-stats h3{
+
+    font-weight:700;
+
+    color:#ff7b00;
+
+}
+
+.premium-stats small{
+
+    color:#64748b;
+
+}
+
+[data-bs-theme="dark"] .premium-stats small{
+
+    color:#cbd5e1;
+
+}
+
+@media(max-width:992px){
+
+.premium-cta{
+
+padding:45px 30px;
+
+text-align:center;
+
+}
+
+.premium-stats{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+            <i class="fa-solid fa-mug-hot brand-icon"></i>
+            <span>Bubble Bliss</span>
+        </a>
+
+        <!-- Mobile Button -->
+        <button class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu">
+
+            <i class="fa-solid fa-bars-staggered text-white"></i>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <!-- Center Menu -->
+            <ul class="navbar-nav mx-auto align-items-lg-center">
+
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle active" href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html">
+                        Menu
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="customize.html">
+                        Customize
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Right Side -->
+            <div class="navbar-actions d-flex align-items-center gap-2">
+
+                <a href="order.html" class="btn order-btn">
+                    Admin
+                </a>
+
+                <button class="btn nav-action-btn" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="btn nav-action-btn" id="rtlToggle">
+                    RTL
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    
+
+<section class=" py-20 premium-about-hero position-relative overflow-hidden">
+
+    <!-- BLUR EFFECTS -->
+
+    <div class="blur-circle blur-1"></div>
+    <div class="blur-circle blur-2"></div>
+
+    <!-- FLOATING ICONS -->
+
+    
+
+    <div class="container position-relative z-3">
+
+        <div class="row align-items-center  py-6 g-5">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="col-lg-6 text-left text-lg-start">
+
+                <!-- BADGE -->
+
+                <span class="premium-badge px-4 py-2 rounded-pill">
+
+                    Bubble Bliss Experience
+
+                </span>
+
+                <!-- TITLE -->
+ <h1 class="premium-title fw-bold mt-4 display-5">
+          Taste The <span class="gradient-text">Magic</span><br>
+          Of Bubble Tea
+        </h1>
+                
+
+                <!-- TEXT -->
+
+                <p class="premium-text mt-4">
+
+                    Discover handcrafted bubble teas made with authentic ingredients,
+                    premium flavors, creamy textures, and unforgettable experiences
+                    in every sip.
+
+                </p>
+
+                <!-- FEATURES -->
+
+                <div class="hero-features mt-5 text-left text-lg-start">
+
+                    <div class="feature-item">
+
+                        <span class="feature-dot"></span>
+
+                        Fresh Ingredients
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <span class="feature-dot"></span>
+
+                        Premium Tapioca Pearls
+
+                    </div>
+
+                    <div class="feature-item">
+
+                        <span class="feature-dot"></span>
+
+                        100+ Flavor Combinations
+
+                    </div>
+
+                </div>
+
+                <!-- BUTTONS -->
+
+                <div class="d-flex flex-wrap gap-3 mt-5 -lg-start">
+
+                    <a href="#about"
+                        class="btn premium-btn px-5 py-3 rounded-pill fw-bold">
+
+                        Explore More
+
+                    </a>
+
+                    <a href="#team"
+                        class="btn premium-outline-btn px-5 py-3 rounded-pill fw-bold">
+
+                        Meet Team
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+
+            <div class="col-lg-6">
+
+                <div class="premium-image-wrapper">
+
+                    <!-- FLOATING CARDS -->
+
+                    <div class="mini-card mini-card-1 fw-bold mb-1">
+
+                        ⭐ 4.9 Rating
+
+                    </div>
+
+                    <div class="mini-card mini-card-2">
+
+                       ❤️ 50K+ Happy Customers
+
+                    </div>
+
+                    <!-- IMAGE -->
+
+                    <img src="/assets/images/about.png"
+                        class="img-fluid premium-image mb-4 "
+                        alt="Bubble Tea">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    
+
+
+<section class="luxury-showcase py-5 position-relative overflow-hidden">
+
+    <!-- BACKGROUND EFFECTS -->
+
+    <div class="luxury-blur blur-left"></div>
+    <div class="luxury-blur blur-right"></div>
+
+    <!-- FLOATING ICONS -->
+
+    <div class="luxury-float float-1">🧋</div>
+    <div class="luxury-float float-2">🍓</div>
+    <div class="luxury-float float-3">✨</div>
+
+    <div class="container position-relative z-3">
+
+        <!-- TITLE -->
+
+        <div class="text-center mb-5">
+
+            
+<span class="feature-tag px-4 py-2 rounded-pill">
+                                Trending Bubble Tea Collection
+
+            </span>
+
+        
+
+            <h2 class=" fw-bold display-5 mt-4 text-left">
+
+                Discover The
+
+                <span class="gradient-text">
+                    Trending Taste
+                </span>
+
+            </h2>
+
+            <p class="luxury-subtitle mt-4">
+
+                Most loved bubble tea flavors crafted with premium ingredients,
+                creamy textures, and rich toppings.
+
+            </p>
+
+        </div>
+
+        <!-- TRENDING ITEMS -->
+
+        <div class="row g-4">
+
+            <!-- ITEM 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trend-card">
+
+                    <!-- TAG -->
+
+                    <span class="trend-tag">
+
+                        Trending
+
+                    </span>
+
+                    <!-- IMAGE -->
+
+                    <div class="trend-img-wrapper">
+
+                        <img src="/assets/images/about1.png"
+                            class="img-fluid trend-img"
+                            alt="Bubble Tea">
+
+                    </div>
+
+                    <!-- CONTENT -->
+
+                    <div class="trend-content">
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <h4 class="fw-bold mb-0">
+
+                                Brown Sugar Boba
+
+                            </h4>
+
+                            <span class="trend-price">
+
+                                ₹220
+
+                            </span>
+
+                        </div>
+
+                        <p class="trend-text mt-3">
+
+                            Creamy milk tea blended with rich brown sugar syrup
+                            and chewy tapioca pearls.
+
+                        </p>
+
+                        <!-- BUTTON -->
+
+                        <a href="#"
+                            class="btn trend-btn rounded-pill px-4 py-2 mt-2">
+
+                            Order Now
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ITEM 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trend-card">
+
+                    <span class="trend-tag hot-tag">
+
+                        Hot Item
+
+                    </span>
+
+                    <div class="trend-img-wrapper">
+
+                        <img src="/assets/images/about2.png"
+                            class="img-fluid trend-img"
+                            alt="Bubble Tea">
+
+                    </div>
+
+                    <div class="trend-content">
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <h4 class="fw-bold mb-0">
+
+                                Strawberry Bliss
+
+                            </h4>
+
+                            <span class="trend-price">
+
+                                ₹240
+
+                            </span>
+
+                        </div>
+
+                        <p class="trend-text mt-3">
+
+                            Fresh strawberry tea infused with creamy milk
+                            and fruity popping pearls.
+
+                        </p>
+
+                        <a href="#"
+                            class="btn trend-btn rounded-pill px-4 py-2 mt-2">
+
+                            Order Now
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ITEM 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="trend-card">
+
+                    <span class="trend-tag new-tag">
+
+                        New Flavor
+
+                    </span>
+
+                    <div class="trend-img-wrapper">
+
+                        <img src="/assets/images/about3.png"
+                            class="img-fluid trend-img"
+                            alt="Bubble Tea">
+
+                    </div>
+
+                    <div class="trend-content">
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <h4 class="fw-bold mb-0">
+
+                                Matcha Pearl Tea
+
+                            </h4>
+
+                            <span class="trend-price">
+
+                                ₹260
+
+                            </span>
+
+                        </div>
+
+                        <p class="trend-text mt-3">
+
+                            Premium Japanese matcha blended with silky milk
+                            and soft tapioca pearls.
+
+                        </p>
+
+                        <a href="#"
+                            class="btn trend-btn rounded-pill px-4 py-2 mt-2">
+
+                            Order Now
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ABOUT -->
+<section class="about-lux py-5" id="about">
+
+    <!-- BACKGROUND GLOW -->
+    <div class="about-glow glow-a"></div>
+    <div class="about-glow glow-b"></div>
+    
+    <div class="container position-relative z-2">
+  <div class="text-center mb-5">
+
+            <span class="feature-tag px-4 py-2 rounded-pill">
+               About Bubble Bliss 
+            </span>
+
+            <h2 class="fw-bold display-5 mt-4 text-left px-6">
+                 Crafted With 
+                <span class="gradient-text">Passion</span>
+            </h2>
+
+            <p class="section-subtitle mt-3 px-6">
+                We focus on quality, freshness, and creativity in every cup.
+            </p>
+
+        </div>
+              
+
+        <div class="row align-items-center g-5">
+
+            
+            <div class="col-lg-6">
+
+    <div class="about-gallery mt">
+
+       
+
+        <!-- MAIN IMAGE -->
+        <div class="gallery-main">
+
+            <img src="/assets/images/about4.png"
+                alt="Bubble Tea">
+
+        </div>
+
+        <!-- SMALL IMAGES -->
+        <div class="gallery-row">
+
+            <img src="/assets/images/sub1.png"
+                alt="Tea">
+
+            <img src="/assets/images/sub2.png"
+                alt="Matcha">
+
+            <img src="/assets/images/sub3.png"
+                alt="Milk Tea">
+
+        </div>
+
+       
+
+    </div>
+
+</div>
+
+            <!-- TEXT SIDE -->
+             
+            <div class="col-lg-6 mt-4">
+                
+  
+
+                <p class="about-text">
+
+                    Bubble Bliss is more than a tea shop — it is a premium experience
+                    where every drink is handcrafted with love, precision, and creativity.
+
+                </p>
+
+                <p class="about-text">
+
+                    We combine authentic tea leaves, fresh milk, natural flavors,
+                    and chewy tapioca pearls to create unforgettable moments in every sip.
+
+                </p>
+
+                <!-- EXTRA CONTENT -->
+                <div class="about-extra mt-4">
+
+                    <div class="info-box">
+                        <h5>🎯 Our Mission</h5>
+                        <p>To deliver happiness in every cup through premium quality bubble tea.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h5>🌟 Our Vision</h5>
+                        <p>To become the most loved bubble tea brand with innovative flavors.</p>
+                    </div>
+
+                    <div class="info-box">
+                        <h5>💎 Our Quality</h5>
+                        <p>We use fresh ingredients, premium tea leaves, and handmade pearls daily.</p>
+                    </div>
+                     <!-- SECTION TITLE -->
+        <div class="gallery-title text-center mb-3">
+
+            <h3 class="fw-bold">
+                Our Fresh Bubble Tea<span class="gradient-text"> Moments</span>
+            </h3>
+
+            <p class="text-muted">
+                Handcrafted drinks made with love & premium ingredients
+            </p>
+
+        </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FEATURES SECTION (OUTSIDE ABOUT) -->
+
+
+<section class="features-lux py-5 position-relative overflow-hidden">
+
+    <!-- BACKGROUND BLURS -->
+    <div class="blur-circle blur-1"></div>
+    <div class="blur-circle blur-2"></div>
+
+    <div class="container position-relative z-2">
+
+        <!-- TITLE -->
+        <div class="text-center mb-5">
+
+            <span class="feature-tag px-4 py-2 rounded-pill">
+                Why Choose Bubble Bliss
+            </span>
+
+            <h2 class="fw-bold display-5 mt-3">
+                Crafted for
+                <span class="gradient-text">Real Taste Lovers</span>
+            </h2>
+
+            <p class="section-subtitle mt-3">
+                We focus on quality, freshness, and creativity in every cup.
+            </p>
+
+        </div>
+
+        <!-- FEATURES -->
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card-lux">
+                    <div class="feature-icon-lux">🧋</div>
+                    <h4 class="fw-bold mt-3">Premium Drinks</h4>
+                    <p class="section-subtitle">
+                        Handcrafted using authentic tea leaves and rich creamy textures.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card-lux">
+                    <div class="feature-icon-lux">🍓</div>
+                    <h4 class="fw-bold mt-3">Fresh Ingredients</h4>
+                    <p class="section-subtitle">
+                        Fresh fruits, natural syrups, and daily prepared toppings.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="feature-card-lux">
+                    <div class="feature-icon-lux">✨</div>
+                    <h4 class="fw-bold mt-3">Creative Flavors</h4>
+                    <p class="section-subtitle">
+                        Build your own bubble tea with endless combinations.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<section class="testimonials-lux blur-section py-5">
+      <!-- BACKGROUND BLURS -->
+    <div class="blur-circle blur-1"></div>
+    <div class="blur-circle blur-2"></div>
+
+    <div class="container">
+
+        <!-- TITLE -->
+        <div class="text-center mb-5">
+
+            <span class="feature-tag px-4 py-2 rounded-pill">
+                Customer Love
+            </span>
+
+            <h2 class="fw-bold display-5 mt-3">
+                What Our
+                <span class="gradient-text">Customers Say</span>
+            </h2>
+
+            <p class="section-subtitle mt-3">
+                Real feedback from bubble tea lovers around the world.
+            </p>
+
+        </div>
+
+        <!-- TESTIMONIALS -->
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial-card">
+
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+
+                    <p class="review-text">
+                        “Best bubble tea I’ve ever tasted! The brown sugar boba is absolutely amazing.”
+                    </p>
+
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="">
+                        <div>
+                            <h6>Sarah M.</h6>
+                            <span>Food Blogger</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial-card">
+
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+
+                    <p class="review-text">
+                        “Fresh ingredients and perfect sweetness. I come here every weekend!”
+                    </p>
+
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
+                        <div>
+                            <h6>Daniel K.</h6>
+                            <span>Student</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-lg-4 col-md-6">
+
+                <div class="testimonial-card">
+
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+
+                    <p class="review-text">
+                        “Love the customization options. Every drink feels unique and premium.”
+                    </p>
+
+                    <div class="user">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="">
+                        <div>
+                            <h6>Emily R.</h6>
+                            <span>Designer</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= TEAM SECTION ================= -->
+<section class="team-section py-5">
+
+    <div class="container">
+
+        <!-- Heading -->
+        <div class="text-center mb-5">
+
+            <span class="feature-tag px-4 py-2 rounded-pill">
+                👨‍🍳 Meet Our Team
+            </span>
+
+            <h2 class="display-5 fw-bold mt-3">
+                The People Behind
+                <span class="gradient-text">Every Sweet Creation</span>
+            </h2>
+
+            <p class="section-subtitle mt-3">
+                Our passionate team crafts every cookie, cake, and gift basket
+                with love, creativity, and premium ingredients.
+            </p>
+
+        </div>
+
+        <!-- Team Members -->
+        <div class="row g-4">
+
+            <!-- Member 1 -->
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card h-100">
+
+                    <div class="team-image">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg"
+                            class="img-fluid"
+                            alt="Sarah Johnson">
+                    </div>
+
+                    <div class="team-content">
+
+                        <h4>Sarah Johnson</h4>
+
+                        <span>Head Baker</span>
+
+                        <p>
+                            Expert in handcrafted cookies, pastries and luxury
+                            desserts made with premium ingredients.
+                        </p>
+
+                        <div class="team-social">
+
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Member 2 -->
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card h-100">
+
+                    <div class="team-image">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg"
+                            class="img-fluid"
+                            alt="Michael Lee">
+                    </div>
+
+                    <div class="team-content">
+
+                        <h4>Michael Lee</h4>
+
+                        <span>Creative Chef</span>
+
+                        <p>
+                            Specializes in gourmet desserts, seasonal collections
+                            and premium handcrafted gift boxes.
+                        </p>
+
+                        <div class="team-social">
+
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Member 3 -->
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card h-100">
+
+                    <div class="team-image">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg"
+                            class="img-fluid"
+                            alt="Emily Davis">
+                    </div>
+
+                    <div class="team-content">
+
+                        <h4>Emily Davis</h4>
+
+                        <span>Gift Designer</span>
+
+                        <p>
+                            Creates elegant gift baskets, festive packaging and
+                            personalized luxury gift collections.
+                        </p>
+
+                        <div class="team-social">
+
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Member 4 -->
+            <div class="col-lg-3 col-md-6">
+
+                <div class="team-card h-100">
+
+                    <div class="team-image">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg"
+                            class="img-fluid"
+                            alt="David Wilson">
+                    </div>
+
+                    <div class="team-content">
+
+                        <h4>David Wilson</h4>
+
+                        <span>Delivery Manager</span>
+
+                        <p>
+                            Ensures every fresh order arrives safely and on time
+                            with premium customer service.
+                        </p>
+
+                        <div class="team-social">
+
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="py-5">
+
+    <div class="container">
+
+        <div class="premium-cta">
+
+            <div class="row align-items-center g-5">
+
+                <!-- Left -->
+                <div class="col-lg-7">
+
+                    <span class="premium-badge">
+                        🍪 Freshly Baked Daily
+                    </span>
+
+                    <h2 class="display-4 fw-bold mt-4">
+                        Make Every Celebration
+                        <span class="gradient-text">Sweeter</span>
+                    </h2>
+
+                    <p class="lead my-4">
+                        From handcrafted cookies and premium cakes to elegant gift
+                        baskets, we bake every order with love and deliver happiness
+                        to your doorstep.
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-3">
+
+                        <a href="#" class="btn btn-premium">
+                            <i class="fa-solid fa-cart-shopping me-2"></i>
+                            Order Now
+                        </a>
+
+                        <a href="#" class="btn btn-outline-premium">
+                            View Menu
+                            <i class="fa-solid fa-arrow-right ms-2"></i>
+                        </a>
+
+                    </div>
+
+                    <div class="premium-stats mt-5">
+
+                        <div>
+                            <h3>10K+</h3>
+                            <small>Happy Customers</small>
+                        </div>
+
+                        <div>
+                            <h3>25+</h3>
+                            <small>Signature Desserts</small>
+                        </div>
+
+                        <div>
+                            <h3>4.9★</h3>
+                            <small>Customer Rating</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Right -->
+
+                <div class="col-lg-5">
+
+                    <div class="premium-image">
+
+                        <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=800"
+                            class="img-fluid"
+                            alt="Cookies">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+ 
+<footer class="footer-section">
+
+    <div class="container">
+
+    <div class="row g-4">
+
+        <!-- BRAND -->
+        <div class="col-lg-3 col-md-6">
+
+            <h3 class="footer-logo">
+                🧋 Bubble Bliss
+            </h3>
+
+            <p class="footer-text">
+                Premium handcrafted bubble tea made with love, freshness, and creativity.
+                Experience authentic flavors, quality ingredients, and refreshing drinks every day.
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Quick Links
+            </h5>
+
+            <ul class="footer-links list-unstyled">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About Us</a></li>
+
+                <li><a href="#menu">Our Menu</a></li>
+
+                <li><a href="#gallery">Gallery</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Contact Us
+            </h5>
+
+            <p>
+                <i class="fa-solid fa-location-dot me-2"></i>
+                Saravanampatti, Coimbatore
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone me-2"></i>
+                +91 98765 43210
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope me-2"></i>
+                hello@bubblebliss.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock me-2"></i>
+                Mon - Sun: 10:00 AM - 11:00 PM
+            </p>
+
+        </div>
+
+        <!-- LOCATION -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Find Us
+            </h5>
+
+            <iframe
+                src="https://www.google.com/maps?q=Barrocco+Bubble+Tea+Cafe+Coimbatore&output=embed"
+                width="100%"
+                height="220"
+                style="border:0;border-radius:15px;"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- NEWSLETTER -->
+    <div class="row align-items-center g-3 mt-2">
+
+        <div class="col-lg-6">
+
+            <h5 class="footer-title mb-2">
+                Subscribe For Updates
+            </h5>
+
+            <p class="mb-0">
+                Get updates about new drinks, offers, and special discounts.
+            </p>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="input-group">
+
+                <input type="email"
+                       class="form-control"
+                       placeholder="Enter your email">
+
+                <button class="btn btn-main">
+                    Subscribe
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- SOCIAL -->
+    <div class="text-center">
+
+        <div class="footer-social">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="text-center mt-3">
+
+        <p class="footer-bottom">
+            © 2026 <span>Bubble Bliss</span>. All Rights Reserved.
+        </p>
+
+        <small>
+            Designed with ❤️ for Bubble Tea Lovers
+        </small>
+
+    </div>
+
+</div>
+
+</footer>
+
+    <!-- BOOTSTRAP -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- THEME SCRIPT -->
+
+   <script src="/assets/js/script.js"></script>
+
+      
+
+    
+
+</body>
+
+</html>

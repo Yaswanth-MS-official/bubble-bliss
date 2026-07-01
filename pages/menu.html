@@ -1,0 +1,896 @@
+
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Bliss | Bubble Tea & Boba Shop</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Add the id="bootstrap-css" here -->
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+   <link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/x-icon" href="/assets/favicons/latte-art.png">
+<style>.feature-card {
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    color: #ff6b6b; /* Use your brand's primary color here */
+}
+/* Styling for images */
+.step-img {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Card Styling */
+.step-card {
+    padding: 2rem;
+    border-radius: 20px;
+    background-color: var(--card-bg); /* Changes based on Dark/Light mode */
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+}
+.step-card {
+    padding: 2rem;
+    border-radius: 20px;
+    background: var(--card-bg);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-10px);
+}
+
+.step-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    opacity: 0.6;
+}
+/* Responsive adjustment for images on smaller screens */
+@media (max-width: 768px) {
+    .step-img {
+        max-width: 100px;
+    }
+}
+/* Ensure consistent image sizing */
+.img-fluid {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* Spacing adjustment for mobile */
+@media (max-width: 768px) {
+    .ps-md-5, .pe-md-5 {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-top: 20px;
+    }
+}
+</style>
+   
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+
+     <nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+            <i class="fa-solid fa-mug-hot brand-icon"></i>
+            <span>Bubble Bliss</span>
+        </a>
+
+        <!-- Mobile Button -->
+        <button class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu">
+
+            <i class="fa-solid fa-bars-staggered text-white"></i>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <!-- Center Menu -->
+            <ul class="navbar-nav mx-auto align-items-lg-center">
+
+                <!-- Home -->
+                <li class="nav-item">
+
+                    <a class="nav-link "
+                        href="/"
+                        data-bs-toggle="dropdown">
+
+                        Home
+
+                    </a>
+
+                   
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link dropdown-toggle active" href="menu.html">
+                        Menu
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="customize.html">
+                        Customize
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Right Side -->
+            <div class="navbar-actions d-flex align-items-center gap-2">
+
+                <a href="login.html" class="btn order-btn">
+                    Admin
+                </a>
+
+                <button class="btn nav-action-btn" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="btn nav-action-btn" id="rtlToggle">
+                    RTL
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+<!-- HERO SECTION START -->
+
+<section class="py-0 md:py-20 hero-section position-relative overflow-hidden" id="home">
+
+    <!-- SLIDER -->
+    <div class="hero-slider">
+
+        <div class="hero-slide active">
+            <img src="/assets/images/banner1.png" alt="Bubble Tea Banner">
+        </div>
+
+        <div class="hero-slide">
+            <img src="/assets/images/banner2.png" alt="Bubble Tea Banner">
+        </div>
+
+        <div class="hero-slide">
+            <img src="https://images.unsplash.com/photo-1577805947697-89e18249d767?q=80&w=1600&auto=format&fit=crop"
+                alt="Bubble Tea Banner">
+        </div>
+
+    </div>
+
+    <!-- OVERLAY -->
+    <div class="hero-overlay"></div>
+
+    <!-- CONTENT -->
+    <div class="container hero-content px-6 ">
+
+        <div class="row align-items-center">
+
+            <div class="col-lg-7">
+
+               
+                 <span class="premium-badge px-4 py-2 rounded-pill">
+                    Premium Bubble Tea
+
+                </span>
+
+                <h1 class="display-3 fw-bold text-white mb-4">
+                    Sip Happiness
+                    <span class="gradient-text"> in Every Bubble</span>
+                </h1>
+
+                <p class="lead text-white mb-4">
+                    Customize your favorite bubble tea with delicious toppings,
+                    refreshing flavors, and exciting rewards.
+                </p>
+
+                <div class="d-flex gap-3 flex-wrap">
+
+                    <a href="#menu" class="btn btn-lg btn-custom px-5">
+                        Explore Menu
+                    </a>
+
+                    <a href="#dashboard" class="btn btn-lg btn-custom rounded-pill px-5">
+                        Dashboard
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="py-5" id="how-it-works -relative overflow-hidden">
+    <div class="container">
+      
+              <div class="text-center mb-4">
+                  <span class="contact-tag px-4 py-2 rounded-pill">
+                            Method of Preparation</span>
+            <h2 class="fw-bold display-5 mt-4">Simple Steps to Bliss</h2>
+            <p class="text-muted mt-5">Enjoy your perfect drink in three easy steps.</p>
+        </div>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="/assets/images/step.png" class="img-fluid rounded shadow" alt="Step 1">
+            </div>
+            <div class="col-md-6 ps-md-5 text-center">
+                <span class="text-primary fw-bold">01</span>
+                <h2>Choose Your Base</h2>
+                <p class="lead">Start your journey by picking a refreshing base from our premium menu. Whether it's our signature Milk Tea or a zesty Fruit infusion, your perfect cup starts here.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5 flex-md-row-reverse">
+            <div class="col-md-6">
+                <img src="/assets/images/step2.png" class="img-fluid rounded shadow" alt="Step 2">
+            </div>
+            <div class="col-md-6 pe-md-5 text-center">
+                <span class="text-primary fw-bold">02</span>
+                <h2 class="text-centre">Customize It</h2>
+                <p class="lead">Personalize your experience! Adjust your sweetness levels, choose your ice preference, and top it off with chewy Boba, popping Jelly, or smooth Pudding.</p>
+            </div>
+        </div>
+
+        <div class="row align-items-center mb-5">
+            <div class="col-md-6">
+                <img src="/assets/images/step3.png" class="img-fluid rounded shadow" alt="Step 3">
+            </div>
+            <div class="col-md-6 ps-md-5 text-center">
+                <span class="text-primary fw-bold">03</span>
+                <h2>Order & Enjoy</h2>
+                <p class="lead">Place your order online and let our experts handcraft your drink. Pick it up from our shop in Coimbatore or enjoy fast delivery straight to your door.</p>
+            </div>
+        </div>
+
+     
+
+    </div>
+</section>
+
+<!-- HERO SECTION END -->
+              
+          <!-- ================= MENU SECTION ================= -->
+
+<section class="py-5" id="menu position-relative overflow-hidden">
+
+    <div class="container">
+
+        <!-- TITLE -->
+        <div class="text-center mb-5">
+                  <span class="contact-tag px-4 py-2 rounded-pill">
+                            signature</span>
+            <h2 class="section-title fw-bold display-4 mt-4 ">
+                Our Signature Drinks
+            </h2>
+
+            <p class="section-subtitle">
+                Fresh flavors, creamy textures, and colorful bubbles.
+            </p>
+
+        </div>
+
+        <!-- CATEGORY FILTER -->
+        <div class="row text-center mb-5 g-3">
+
+            <div class="col">
+                <button class="btn btn-category active w-100 rounded-pill" data-filter="all">All</button>
+            </div>
+
+            <div class="col">
+                <button class="btn btn-category w-100 h-40" data-filter="milk-tea">Milk Tea</button>
+            </div>
+
+            <div class="col">
+                <button class="btn btn-category w-100" data-filter="fruit-tea">Fruit Tea</button>
+            </div>
+
+            <div class="col">
+                <button class="btn btn-category w-100" data-filter="smoothie">Smoothies</button>
+            </div>
+
+        </div>
+
+        <!-- MENU GRID -->
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="milk-tea">
+
+                <div class="drink-card">
+
+                    <img src="/assets/images/menu4.png"
+                         class="img-fluid"
+                         alt="Matcha Latte">
+
+                    <div class="drink-body">
+
+                        <span class="badge badge-gold">Best Seller</span>
+
+                        <h4>Bubble tea</h4>
+
+                        <p>Creamy milk tea with rich brown sugar syrup and chewy pearls.</p>
+
+                        <div class="tags">
+                            <span>Sweet</span>
+                            <span>Creamy</span>
+                        </div>
+
+                        <h3 class="price">₹199</h3>
+
+                        <button class="btn btn-order">
+                            <i class="fa-solid fa-cart-shopping me-2"></i>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+                
+
+            </div>
+  <div class="col-lg-4 col-md-6 menu-item" data-category="milk-tea">
+
+                <div class="drink-card">
+
+                    <img src="/assets/images/cappacino.png"
+                         class="img-fluid"
+                         alt="Matcha Latte">
+
+                    <div class="drink-body">
+
+                        <span class="badge badge-gold">Best Seller</span>
+
+                        <h4>Cappacino</h4>
+
+                        <p>Creamy milk tea with rich brown sugar syrup and chewy pearls.</p>
+
+                        <div class="tags">
+                            <span>Sweet</span>
+                            <span>Creamy</span>
+                        </div>
+
+                        <h3 class="price">₹199</h3>
+
+                        <button class="btn btn-order">
+                            <i class="fa-solid fa-cart-shopping me-2"></i>
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+                
+
+            </div>
+            <!-- CARD 2 -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="fruit-tea">
+
+                <div class="drink-card">
+
+                    <img src="/assets/images/menu3.png"
+                     class="img-fluid"
+     alt="strawberry fruit tea">
+
+                    <div class="drink-body">
+
+                        <span class="badge badge-red">Fruity</span>
+
+                        <h4>Strawberry Fruit Tea</h4>
+
+                        <p>Refreshing iced fruit tea with strawberry popping boba.</p>
+
+                        <div class="tags">
+                            <span>Fresh</span>
+                            <span>Cold</span>
+                        </div>
+
+                        <h3 class="price">₹179</h3>
+
+                        <button class="btn btn-order">Add to Cart</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+ <div class="col-lg-4 col-md-6 menu-item" data-category="fruit-tea">
+
+                <div class="drink-card">
+
+                    <img src="/assets/images/greentea.png"
+                     class="img-fluid"
+     alt="Matcha Latte">
+
+                    <div class="drink-body">
+
+                        <span class="badge badge-red">Fruity</span>
+
+                        <h4>Green Tea</h4>
+
+                        <p>Fresh Lime iced fruit tea</p>
+
+                        <div class="tags">
+                            <span>Fresh</span>
+                            <span>Cold</span>
+                        </div>
+
+                        <h3 class="price">₹179</h3>
+
+                        <button class="btn btn-order">Add to Cart</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- CARD 3 -->
+            <div class="col-lg-4 col-md-6 menu-item" data-category="smoothie">
+
+                <div class="drink-card">
+
+                    <img src="/assets/images/menu2.png"
+                     class="img-fluid"
+     alt="Matcha Latte">
+
+                    <div class="drink-body">
+
+                        <span class="badge badge-green">Premium</span>
+
+                        <h4>Rose Milk</h4>
+
+                        <p> Rose Petal blended with creamy milk.</p>
+
+                        <div class="tags">
+                            <span>Matcha</span>
+                            <span>Energy</span>
+                        </div>
+
+                        <h3 class="price">₹229</h3>
+
+                        <button class="btn btn-order">Add to Cart</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+<div class="col-lg-4 col-md-6 menu-item" data-category="smoothie">
+
+                <div class="drink-card">
+
+                    <img src="/assets/images/menu1.png" 
+                    class="img-fluid"
+                    alt="Matcha Latte">
+
+                    <div class="drink-body">
+
+                        <span class="badge badge-green">Premium</span>
+
+                        <h4>Cold Coffee</h4>
+
+                        <p> Cold Coffee blended with creamy Milk.</p>
+
+                        <div class="tags">
+                            <span>Matcha</span>
+                            <span>Energy</span>
+                        </div>
+
+                        <h3 class="price">₹229</h3>
+
+                        <button class="btn btn-order">Add to Cart</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- Contact -->
+
+   <!-- ===================================
+     PREMIUM CONTACT SECTION
+=================================== -->
+
+<section class="contact-lux py-5 position-relative overflow-hidden" id="contact">
+
+    <!-- BLUR EFFECTS -->
+    <div class="contact-blur blur-1"></div>
+    <div class="contact-blur blur-2"></div>
+
+    <div class="container position-relative z-2">
+
+        <!-- SECTION TITLE -->
+        <div class="text-center mb-5">
+
+            <span class="contact-tag px-4 py-2 rounded-pill">
+                Get In Touch
+            </span>
+
+            <h2 class="contact-title fw-bold display-4 mt-4">
+
+                Let's Talk About
+
+                <span class="gradient-text">
+                    Bubble Tea
+                </span>
+
+            </h2>
+
+            <p class="contact-subtitle mt-3">
+                Have questions, feedback, or want to collaborate?
+                Send us a message anytime.
+            </p>
+
+        </div>
+
+        <div class="row align-items-center g-5">
+
+            <!-- LEFT INFO -->
+            <div class="col-lg-5">
+
+                <div class="contact-info-card">
+
+                    <h3 class="fw-bold mb-4">
+                        Contact Information
+                    </h3>
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div>
+                            <h6>Our Location</h6>
+                            <p>Tamil Nadu, India</p>
+                        </div>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+
+                        <div>
+                            <h6>Email Address</h6>
+                            <p>hello@bubblebliss.com</p>
+                        </div>
+
+                    </div>
+
+                    <div class="info-item">
+
+                        <div class="info-icon">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+
+                        <div>
+                            <h6>Phone Number</h6>
+                            <p>+91 98765 43210</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT FORM -->
+            <div class="col-lg-7">
+
+                <div class="contact-form-box">
+
+                    <form>
+
+                        <div class="row g-4">
+
+                            <div class="col-md-6">
+
+                                <input type="text"
+                                    class="form-control custom-input"
+                                    placeholder="Your Name "required>
+
+                            </div>
+                            
+
+                            <div class="col-md-6">
+
+                                <input type="email"
+                                    class="form-control custom-input"
+                                    placeholder="Email Address" required>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <input type="text"
+                                    class="form-control custom-input"
+                                    placeholder="Subject" required>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <textarea rows="6"
+                                    class="form-control custom-input"
+                                    placeholder="Write Your Message" required></textarea>
+
+                            </div>
+
+                            <div class="col-12">
+
+                                <button class="btn contact-btn px-5 py-3 rounded-pill">
+
+                                    <i class="fa-solid fa-paper-plane me-2"></i>
+
+                                    Send Message
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<footer class="footer-section">
+
+    <div class="container">
+
+    <div class="row g-4">
+
+        <!-- BRAND -->
+        <div class="col-lg-3 col-md-6">
+
+            <h3 class="footer-logo">
+                🧋 Bubble Bliss
+            </h3>
+
+            <p class="footer-text">
+                Premium handcrafted bubble tea made with love, freshness, and creativity.
+                Experience authentic flavors, quality ingredients, and refreshing drinks every day.
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Quick Links
+            </h5>
+
+            <ul class="footer-links list-unstyled">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About Us</a></li>
+
+                <li><a href="#menu">Our Menu</a></li>
+
+                <li><a href="#gallery">Gallery</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Contact Us
+            </h5>
+
+            <p>
+                <i class="fa-solid fa-location-dot me-2"></i>
+                Saravanampatti, Coimbatore
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone me-2"></i>
+                +91 98765 43210
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope me-2"></i>
+                hello@bubblebliss.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock me-2"></i>
+                Mon - Sun: 10:00 AM - 11:00 PM
+            </p>
+
+        </div>
+
+        <!-- LOCATION -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Find Us
+            </h5>
+
+            <iframe
+                src="https://www.google.com/maps?q=Barrocco+Bubble+Tea+Cafe+Coimbatore&output=embed"
+                width="100%"
+                height="220"
+                style="border:0;border-radius:15px;"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- NEWSLETTER -->
+    <div class="row align-items-center g-3 mt-2">
+
+        <div class="col-lg-6">
+
+            <h5 class="footer-title mb-2">
+                Subscribe For Updates
+            </h5>
+
+            <p class="mb-0">
+                Get updates about new drinks, offers, and special discounts.
+            </p>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="input-group">
+
+                <input type="email"
+                       class="form-control"
+                       placeholder="Enter your email">
+
+                <button class="btn btn-main">
+                    Subscribe
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- SOCIAL -->
+    <div class="text-center">
+
+        <div class="footer-social">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="text-center mt-3">
+
+        <p class="footer-bottom">
+            © 2026 <span>Bubble Bliss</span>. All Rights Reserved.
+        </p>
+
+        <small>
+            Designed with ❤️ for Bubble Tea Lovers
+        </small>
+
+    </div>
+
+</div>
+
+</footer>
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="/assets/js/script.js"></script>
+   
+       
+
+
+   
+
+
+
+
+</body>
+
+</html>

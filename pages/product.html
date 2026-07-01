@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bubble Bliss Product</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="/assets/css/side.css">
+<link rel="icon" type="image/x-icon" href="/assets/favicons/latte-art.png">
+    <style>
+
+        
+
+
+
+
+
+
+
+
+       /* =========================================
+   SIDEBAR MINIMIZE
+========================================= */
+
+.sidebar.minimized{
+
+    width:90px;
+
+}
+
+/* HIDE TEXT */
+
+.sidebar.minimized .logo,
+.sidebar.minimized .menu-title,
+.sidebar.minimized .sidebar-menu span{
+
+    display:none;
+
+}
+
+/* CENTER ICONS */
+
+.sidebar.minimized .sidebar-menu a{
+
+    justify-content:center;
+
+}
+
+/* MAIN CONTENT EXPAND */
+
+.main-content.expanded{
+
+    margin-left:90px;
+    width:calc(100% - 90px);
+
+}
+
+        *{
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            margin:0;
+            background:#f5f7fb;
+            overflow-x:hidden;
+            transition:0.3s;
+        }
+
+        .app{
+            display:flex;
+            min-height:100vh;
+        }
+
+
+
+/* DARK MODE */
+
+[data-bs-theme="dark"] .menu-title{
+    color: #aaa;
+}
+
+[data-bs-theme="dark"] .sidebar-menu a{
+    color: #ddd;
+}
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body{
+            background: #f7f5ff;
+            overflow-x: hidden;
+        }
+
+        :root{
+            --primary:#ff4fa3;
+            --secondary:#7c4dff;
+            --dark:#1f1f1f;
+            --light:#ffffff;
+        }
+
+        /* =========================================
+           SIDEBAR
+        ========================================= */
+
+        
+
+        
+
+    
+
+
+       
+
+    
+        /* =========================================
+           MAIN CONTENT
+        ========================================= */
+
+        .main-content{
+            margin-left: 280px;
+            padding: 30px;
+        }
+
+        /* =========================================
+           TOPBAR
+        ========================================= */
+
+        .topbar{
+            background: #fff;
+            padding: 18px 25px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .search-box{
+            width: 350px;
+            position: relative;
+        }
+
+        .search-box input{
+            width: 100%;
+            height: 52px;
+            border: none;
+            background: #f4f4f4;
+            border-radius: 50px;
+            padding: 0 50px 0 20px;
+            outline: none;
+        }
+
+        .search-box i{
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            color: #777;
+        }
+
+        .admin-box{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .admin-box img{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           HERO SECTION
+        ========================================= */
+
+        .hero-dashboard{
+            background: linear-gradient(135deg,#ff69b4,#7c4dff);
+            padding: 50px;
+            border-radius: 35px;
+            position: relative;
+            overflow: hidden;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+
+        .hero-dashboard::before{
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,.08);
+            border-radius: 50%;
+            top: -120px;
+            right: -120px;
+        }
+
+        .hero-badge{
+            background: rgba(255,255,255,.15);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title{
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-top: 25px;
+            line-height: 1.2;
+        }
+
+        .hero-title span{
+            color: #ffe082;
+        }
+
+        .hero-subtitle{
+            margin-top: 15px;
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 650px;
+            color: rgba(255,255,255,.9);
+        }
+
+        .hero-buttons{
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn-primary{
+            background: #fff;
+            color: #7c4dff;
+            border: none;
+            border-radius: 50px;
+            padding: 14px 30px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .hero-btn-outline{
+            border: 2px solid rgba(255,255,255,.4);
+            color: #fff;
+            border-radius: 50px;
+            padding: 14px 30px;
+            font-weight: 600;
+        }
+
+        .hero-dashboard img{
+            max-height: 320px;
+            border-radius: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,.2);
+        }
+
+        /* =========================================
+           DASHBOARD CARDS
+        ========================================= */
+
+        .dashboard-card{
+            background: #fff;
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+            transition: .4s;
+            height: 100%;
+        }
+
+        .dashboard-card:hover{
+            transform: translateY(-8px);
+        }
+
+        .icon-box{
+            width: 75px;
+            height: 75px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        .pink{
+            background: linear-gradient(135deg,#ff4fa3,#ff8cc7);
+        }
+
+        .purple{
+            background: linear-gradient(135deg,#7c4dff,#aa8cff);
+        }
+
+        .orange{
+            background: linear-gradient(135deg,#ff9800,#ffc46b);
+        }
+
+        .blue{
+            background: linear-gradient(135deg,#29b6f6,#74d8ff);
+        }
+
+        /* =========================================
+           CHART
+        ========================================= */
+
+        .chart-box{
+            background: #fff;
+            border-radius: 30px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .chart-placeholder{
+            height: 300px;
+            border-radius: 25px;
+            background: linear-gradient(180deg,
+                    rgba(255,79,163,.2),
+                    rgba(124,77,255,.05));
+            overflow: hidden;
+            position: relative;
+        }
+
+        .chart-line{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        /* =========================================
+           TABLE
+        ========================================= */
+
+        .order-table{
+            background: #fff;
+            border-radius: 30px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        table{
+            width: 100%;
+        }
+
+        table tr{
+            border-bottom: 1px solid #eee;
+        }
+
+        table td{
+            padding: 18px 0;
+        }
+
+        .status{
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .completed{
+            background: #d4f8e8;
+            color: #00a651;
+        }
+
+        .pending{
+            background: #ffe0ea;
+            color: #ff4fa3;
+        }
+
+        /* =========================================
+           TOP DRINKS
+        ========================================= */
+
+        .drink-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .drink-item img{
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           REVIEWS
+        ========================================= */
+
+        .review-item{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .review-user{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           DARK MODE
+        ========================================= */
+
+        [data-bs-theme="dark"] body{
+            background: #121212;
+        }
+
+        [data-bs-theme="dark"] .sidebar,
+        [data-bs-theme="dark"] .topbar,
+        [data-bs-theme="dark"] .dashboard-card,
+        [data-bs-theme="dark"] .chart-box,
+        [data-bs-theme="dark"] .order-table{
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        [data-bs-theme="dark"] .search-box input{
+            background: #2b2b2b;
+            color: #fff;
+        }
+
+        [data-bs-theme="dark"] .sidebar-menu a{
+            color: #ddd;
+        }
+
+        [data-bs-theme="dark"] table tr,
+        [data-bs-theme="dark"] .drink-item,
+        [data-bs-theme="dark"] .review-item{
+            border-color: #333;
+        }
+
+        [data-bs-theme="dark"] .text-muted{
+            color: #cfcfcf !important;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width:991px){
+
+            .sidebar{
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content{
+                margin-left: 0;
+            }
+
+            .topbar{
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .search-box{
+                width: 100%;
+            }
+
+            .hero-title{
+                font-size: 2.3rem;
+            }
+
+        }
+
+
+        /* =========================================
+   SIDEBAR MENU SECTION
+========================================= */
+
+.menu-section{
+    margin-bottom: 25px;
+}
+
+.menu-title{
+    font-size: 13px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 15px;
+    padding-left: 12px;
+    letter-spacing: 1px;
+}
+
+.sidebar-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-menu li{
+    margin-bottom: 10px;
+}
+
+.sidebar-menu a{
+    text-decoration: none;
+    color: #555;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 18px;
+    border-radius: 18px;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.sidebar-menu a:hover,
+.sidebar-menu .active{
+    background: linear-gradient(135deg,#ff4fa3,#7c4dff);
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.sidebar-menu i{
+    font-size: 18px;
+    width: 22px;
+}
+
+/* DARK MODE */
+
+[data-bs-theme="dark"] .menu-title{
+    color: #aaa;
+}
+
+[data-bs-theme="dark"] .sidebar-menu a{
+    color: #ddd;
+}
+    </style>
+    
+
+
+<style>
+
+/* ===== BASE ===== */
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f7f5ff;
+}
+
+
+.menu a{
+    display:block;
+    padding:10px;
+    margin-bottom:8px;
+    text-decoration:none;
+    color:#333;
+    border-radius:10px;
+}
+
+.menu a:hover{
+    background:#ff4fa3;
+    color:#fff;
+}
+
+/* ===== MAIN ===== */
+.main{
+    margin-left:260px;
+    padding:25px;
+}
+
+/* ===== CARDS ===== */
+.stat-card{
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+    text-align:center;
+}
+
+.product-card{
+    background:#fff;
+    border-radius:18px;
+    padding:18px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.06);
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+}
+
+/* BUTTON */
+.btn-pink{
+    background:#ff4fa3;
+    color:#fff;
+    border:none;
+    padding:8px 15px;
+    border-radius:10px;
+}
+
+/* MODAL */
+.modal-box{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.modal-content{
+    width:350px;
+    margin:120px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:15px;
+}
+
+.modal-content input{
+    width:100%;
+    margin-bottom:10px;
+    padding:8px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar show"
+         id="sidebar">
+
+    <div class="logo">
+         <i class="fa-solid fa-mug-hot brand-icon"></i>
+
+            <span>Bubble Bliss</span>
+    </div>
+     <!-- ACTION BUTTONS -->
+
+        <div class="d-flex gap-2 mb-4">
+
+            <button class="btn nav-action-btn flex-fill"
+                    id="themeToggle">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+            <button class="btn nav-action-btn flex-fill"
+                    id="rtlToggle">
+
+                RTL
+
+            </button>
+
+        </div>
+
+    <!-- MENU SECTION -->
+
+    <div class="menu-section">
+
+        <h6 class="menu-title">
+            MAIN MENU
+        </h6>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="dashboard.html" class="active">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="order.html">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        Orders
+                    </span>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="customer.html">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <span>
+                        Customers
+                    </span>
+
+                </a>
+            </li>
+
+            <li>
+                <a href="#">
+
+                    <i class="fa-solid fa-mug-hot"></i>
+
+                    <span>
+                        Drinks
+                    </span>
+
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+
+   
+
+
+    <!-- SETTINGS SECTION -->
+
+    <div class="menu-section mt-4">
+
+        <h6 class="menu-title">
+            SETTINGS
+        </h6>
+
+        <ul class="sidebar-menu">
+
+            <li>
+                <a href="profile.html">
+
+                    <i class="fa-solid fa-user-gear"></i>
+
+                    <span>
+                        Profile
+                    </span>
+
+                </a>
+            </li>
+
+          
+            <li>
+                <a href="login.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </a>
+            </li>
+
+        </ul>
+
+        <button class="toggle-btn" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+    </div>
+
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- HEADER -->
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+    <h2>🧋 Products</h2>
+
+    <button class="btn-pink" onclick="openModal()">+ Add Product</button>
+
+</div>
+
+<!-- STATS -->
+<div class="row g-3 mb-4">
+
+    <div class="col-md-4">
+        <div class="stat-card">
+            <h4 id="totalProducts">0</h4>
+            <p>Total Products</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="stat-card">
+            <h4 id="totalValue">₹0</h4>
+            <p>Total Value</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="stat-card">
+            <h4 id="avgPrice">₹0</h4>
+            <p>Avg Price</p>
+        </div>
+    </div>
+
+</div>
+
+
+<!-- PRODUCTS GRID -->
+<div class="row" id="productList"></div>
+
+</div>
+
+<!-- ADD MODAL -->
+<div class="modal-box" id="modal">
+
+    <div class="modal-content">
+
+        <h5>Add Product</h5>
+
+        <input id="name" placeholder="Product Name">
+        <input id="price" type="number" placeholder="Price">
+
+        <button class="btn-pink w-100" onclick="addProduct()">Save</button>
+        <button class="btn btn-secondary w-100 mt-2" onclick="closeModal()">Close</button>
+
+    </div>
+
+</div>
+</div>
+
+<script>
+
+/* ===== LOAD ===== */
+let products = JSON.parse(localStorage.getItem("products")) || [];
+
+/* ===== SAVE ===== */
+function save(){
+    localStorage.setItem("products", JSON.stringify(products));
+}
+
+/* ===== MODAL ===== */
+function openModal(){
+    document.getElementById("modal").style.display="block";
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+/* ===== ADD PRODUCT ===== */
+function addProduct(){
+
+    let name = document.getElementById("name").value;
+    let price = Number(document.getElementById("price").value);
+
+    if(name && price){
+
+        products.push({
+            name,
+            price
+        });
+
+        save();
+        render();
+        closeModal();
+    }
+}
+
+/* ===== DELETE ===== */
+function deleteProduct(i){
+    products.splice(i,1);
+    save();
+    render();
+}
+
+/* ===== RENDER ===== */
+function render(){
+
+    let box = document.getElementById("productList");
+    box.innerHTML = "";
+
+    let totalValue = 0;
+
+    products.forEach((p,i)=>{
+        totalValue += p.price;
+
+        box.innerHTML += `
+        <div class="col-md-4 mb-3">
+
+            <div class="product-card">
+
+                <h5>${p.name}</h5>
+                <p>₹${p.price}</p>
+
+                <button class="btn btn-danger btn-sm" onclick="deleteProduct(${i})">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+        `;
+    });
+
+    document.getElementById("totalProducts").innerText = products.length;
+    document.getElementById("totalValue").innerText = "₹" + totalValue;
+    document.getElementById("avgPrice").innerText =
+        products.length ? "₹" + Math.round(totalValue/products.length) : "₹0";
+}
+
+render();
+
+</script>
+<script src="/assets/js/side.js"></script>
+
+</body>
+</html>

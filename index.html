@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Bliss | Bubble Tea Shop</title>
+
+    <!-- Bootstrap RTL/LTR -->
+    <link id="bootstrap-css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+   <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/x-icon" href="/assets/favicons/latte-art.png">
+   <style>
+    .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+   </style>
+</head>>
+
+<body>
+
+    <!-- NAVBAR -->
+
+   <!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg custom-navbar fixed-top">
+
+    <div class="container">
+
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+            <i class="fa-solid fa-mug-hot brand-icon"></i>
+            <span>Bubble Bliss</span>
+        </a>
+
+        <!-- Mobile Button -->
+        <button class="navbar-toggler border-0 shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navMenu">
+
+            <i class="fa-solid fa-bars-staggered text-white"></i>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navMenu">
+
+            <!-- Center Menu -->
+            <ul class="navbar-nav mx-auto align-items-lg-center">
+
+                <!-- Home -->
+                <li class="nav-item dropdown">
+
+                   <a class="nav-link dropdown-toggle active d-flex align-items-center gap-1"
+   href="#"
+   data-bs-toggle="dropdown">
+
+  Home
+  <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+</a>
+
+                    <ul class="dropdown-menu custom-dropdown">
+
+                        <li>
+                            <a class="dropdown-item" href="/">
+                                Home 1
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item" href="/pages/home.html">
+                                Home 2
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/about.html">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/menu.html">
+                        Menu
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/customize.html">
+                        Customize
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/pages/contact.html">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- Right Side -->
+            <div class="navbar-actions d-flex align-items-center gap-2">
+
+                <a href="/pages/login.html" class="btn order-btn">
+                    Admin
+                </a>
+
+                <button class="btn nav-action-btn" id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+
+                <button class="btn nav-action-btn" id="rtlToggle">
+                    RTL
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    <!-- HERO -->
+
+   <!-- HERO SECTION -->
+
+<!-- HERO SECTION WITHOUT SLIDER -->
+
+<!-- HERO SECTION -->
+<section class="py-20 md:py-20 premium-about-hero position-relative overflow-hidden">
+  <div class="blur-circle blur-1"></div>
+  <div class="blur-circle blur-2"></div>
+
+  <div class="container position-relative z-30">
+
+    <div class="row align-items-centre py-6">
+      <div class="col-lg-6 -lg-start">
+        <span class="premium-badge px-4 py-2  rounded-pill d-inline-block">
+          Bubble Bliss Experience
+        </span>
+
+        <h1 class="premium-title fw-bold mt-4 display-5">
+          Taste The <span class="gradient-text">Magic</span><br>
+          Of Bubble Tea
+        </h1>
+
+        <p class="premium-text mt-3 fs-5 mb-5">
+          Discover handcrafted bubble teas made with authentic ingredients, 
+          premium flavors, and unforgettable experiences in every sip.
+        </p>
+
+        <div class="d-flex flex-wrap gap-3 -lg-start mb-5">
+          <a href="#about" class="btn premium-btn px-5 py-3 rounded-pill fw-bold">Explore More</a>
+          <a href="#team" class="btn premium-outline-btn px-5 py-3 rounded-pill fw-bold">Meet Team</a>
+        </div>
+
+        <div class="row g-4 ">
+          <div class="col-4">
+            <h3 class="fw-bold">50+</h3>
+            <p class="mb-0 text-muted">Flavors</p>
+          </div>
+          <div class="col-4">
+            <h3 class="fw-bold">25k+</h3>
+            <p class="mb-0 text-muted">Happy Customers</p>
+          </div>
+          <div class="col-4">
+            <h3 class="fw-bold">4.9★</h3>
+            <p class="mb-0 text-muted">Rating</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mt-5 mb-">
+        <div class="premium-image-wrapper position-relative">
+            
+         
+                    <div class="mini-card mini-card-1 fw-bold mb-1">
+
+                        ⭐ 4.9 Rating
+
+                    </div>
+
+                    <div class="mini-card mini-card-2">
+
+                       ❤️ 50K+ Happy Customers
+
+                    </div>
+
+          <img src="/assets/images/banner1.png" class="img-fluid premium-image mb-4" alt="Delicious handcrafted bubble tea">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- MENU -->
+
+   <section class="py-5 md:py-20" id="menu">
+    <div class="container">
+         <div class="text-center mb-5">
+
+            <span class="special-badge px-4 py-2 rounded-pill">
+                Trending Drinks
+            </span>
+
+            <h2 class="special-title fw-bold display-5 mt-4">
+                Popular <span class="gradient-text">Drinks</span> 
+            </h2>
+
+            <p class="special-subtitle fs-5">
+                Handpicked favorites for your refreshment.
+            </p>
+
+        </div>
+       
+        <div class="row g-4">
+            <!-- Brown Sugar Boba -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img src="/assets/images/bobble.jpg" 
+                         class="card-img-top" alt="Brown Sugar Boba" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title">Brown Sugar Boba</h4>
+                        <p class="card-text text-muted">Creamy milk tea with tapioca pearls.</p>
+                        <div class="h5 fw-bold mb-3 text-primary">₹199</div>
+                        <button class="btn btn-custom w-100 rounded-pill">
+    Add to Cart
+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strawberry Tea -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img src="/assets/images/strawberry.jpg" 
+                         class="card-img-top" alt="Strawberry Tea" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title">Strawberry Tea</h4>
+                        <p class="card-text text-muted">Refreshing tea with strawberry.</p>
+                        <div class="h5 fw-bold mb-3 text-primary">₹179</div>
+                        <button class="btn btn-custom w-100 rounded-pill">
+    Add to Cart
+</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matcha Latte -->
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img src="/assets/images/matchalatte.png" 
+                         class="card-img-top" alt="Matcha Latte" style="height: 250px; object-fit: cover;">
+                    <div class="card-body text-center p-4">
+                        <h4 class="card-title">Matcha Latte</h4>
+                        <p class="card-text text-muted">Japanese matcha with fresh milk.</p>
+                        <div class="h5 fw-bold mb-3 text-primary">₹229</div>
+                        <button class="btn btn-custom w-100 rounded-pill">
+    Add to Cart
+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- SPECIAL OFFERS SECTION -->
+
+<section class="special-section py-6 md:py-20" id="special">
+
+    <div class="container">
+
+        <!-- SECTION TITLE -->
+
+        <div class="text-center mb-5">
+
+            <span class="special-badge px-4 py-2 rounded-pill">
+                Trending Drinks
+            </span>
+
+            <h2 class="special-title fw-bold display-5 mt-4">
+                Sip <span class="gradient-text">Something Special</span>
+            </h2>
+
+            <p class="special-subtitle fs-5">
+                Freshly crafted bubble teas with premium ingredients and unique flavors.
+            </p>
+
+        </div>
+
+        <!-- CARDS -->
+
+        <div class="row g-4">
+
+            <!-- CARD 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="special-card h-100">
+
+                    <div class="special-image overflow-hidden">
+
+                        <img src="/assets/images/expresso.png"
+                            class="img-fluid w-100"
+                            alt="Bubble Tea">
+
+                    </div>
+
+                    <div class="p-4">
+
+                        <h4 class="fw-bold mb-3">
+                            Expresso
+                        </h4>
+
+                        <p class="mb-4 special-text">
+                            Creamy milk tea blended with rich brown sugar syrup and chewy tapioca pearls.
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <h5 class="price mb-0">
+                                ₹220
+                            </h5>
+
+                            <button class="btn order-btn rounded-pill px-4">
+                                Order
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="special-card h-100">
+
+                    <div class="special-image overflow-hidden">
+
+                        <img src="/assets/images/layertea.png"
+                            class="img-fluid w-100"
+                            alt="Bubble Tea">
+
+                    </div>
+
+                    <div class="p-4">
+
+                        <h4 class="fw-bold mb-3">
+                            Layer Tea
+                        </h4>
+
+                        <p class="mb-4 special-text">
+                            Sweet strawberry flavor mixed with creamy milk and refreshing ice.
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <h5 class="price mb-0">
+                                ₹250
+                            </h5>
+
+                            <button class="btn order-btn rounded-pill px-4">
+                                Order
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="special-card h-100">
+
+                    <div class="special-image overflow-hidden">
+
+                        <img src="/assets/images/coldcoffee.png"
+                            class="img-fluid w-100"
+                            alt="Bubble Tea">
+
+                    </div>
+
+                    <div class="p-4">
+
+                        <h4 class="fw-bold mb-3">
+                            Cold Coffee
+                        </h4>
+
+                        <p class="mb-4 special-text">
+                            Japanese matcha blended with fresh cream for a smooth earthy taste.
+                        </p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <h5 class="price mb-0">
+                                ₹280
+                            </h5>
+
+                            <button class="btn order-btn rounded-pill px-4">
+                                Order
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY CHOOSE US SECTION -->
+
+<section class="why-section py-5 md:py-20" id="why">
+
+    <div class="container">
+
+        <!-- TITLE -->
+
+        <div class="text-center mb-5">
+
+            <span class="why-badge px-4 py-2 rounded-pill">
+                Why Choose Us
+            </span>
+
+            <h2 class="why-title fw-bold display-5 mt-4">
+                Crafted With Love <span class="gradient-text">& Fresh Ingredients</span>
+            </h2>
+
+            <p class="why-subtitle fs-5">
+                Experience premium bubble tea made with authentic flavors and high-quality toppings.
+            </p>
+
+        </div>
+
+        <!-- FEATURES -->
+
+        <div class="row g-4">
+
+            <!-- FEATURE 1 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="why-card text-center p-4 h-100">
+
+                    <div class="icon-box mx-auto mb-4">
+                        🧋
+                    </div>
+
+                    <h4 class="fw-bold mb-3">
+                        Premium Tea
+                    </h4>
+
+                    <p class="mb-0">
+                        Freshly brewed tea leaves with rich aroma and authentic taste.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FEATURE 2 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="why-card text-center p-4 h-100">
+
+                    <div class="icon-box mx-auto mb-4">
+                        🍓
+                    </div>
+
+                    <h4 class="fw-bold mb-3">
+                        Fresh Flavors
+                    </h4>
+
+                    <p class="mb-0">
+                        Made using natural fruit extracts and delicious creamy blends.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- FEATURE 3 -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <div class="why-card text-center p-4 h-100">
+
+                    <div class="icon-box mx-auto mb-4">
+                        ✨
+                    </div>
+
+                    <h4 class="fw-bold mb-3">
+                        Custom Toppings
+                    </h4>
+
+                    <p class="mb-0">
+                        Add boba pearls, jelly cubes, cheese foam, and more.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OFFER SECTION -->
+
+<section class="offer-section py-5 md:py-20">
+
+    <div class="container">
+
+        <div class="offer-box p-5 rounded-5 text-center">
+
+            <span class="offer-mini-badge px-4 py-2 rounded-pill">
+                Limited Offer
+            </span>
+
+            <h2 class="fw-bold display-4 mt-4">
+                Buy 2 Drinks & Get 1 Free
+            </h2>
+
+            <p class="fs-5 mt-3 mb-4">
+                Enjoy your favorite bubble tea with friends and family today.
+            </p>
+
+            <button class="btn offer-btn px-5 py-3 rounded-pill fw-bold">
+                Claim Offer
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- FOOTER -->
+
+
+<footer class="footer-section">
+
+  <div class="container">
+
+    <div class="row g-4">
+
+        <!-- BRAND -->
+        <div class="col-lg-3 col-md-6">
+
+            <h3 class="footer-logo">
+                🧋 Bubble Bliss
+            </h3>
+
+            <p class="footer-text">
+                Premium handcrafted bubble tea made with love, freshness, and creativity.
+                Experience authentic flavors, quality ingredients, and refreshing drinks every day.
+            </p>
+
+        </div>
+
+        <!-- QUICK LINKS -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Quick Links
+            </h5>
+
+            <ul class="footer-links list-unstyled">
+
+                <li><a href="#home">Home</a></li>
+
+                <li><a href="#about">About Us</a></li>
+
+                <li><a href="#menu">Our Menu</a></li>
+
+                <li><a href="#gallery">Gallery</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Contact Us
+            </h5>
+
+            <p>
+                <i class="fa-solid fa-location-dot me-2"></i>
+                Saravanampatti, Coimbatore
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone me-2"></i>
+                +91 98765 43210
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope me-2"></i>
+                hello@bubblebliss.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock me-2"></i>
+                Mon - Sun: 10:00 AM - 11:00 PM
+            </p>
+
+        </div>
+
+        <!-- LOCATION -->
+        <div class="col-lg-3 col-md-6">
+
+            <h5 class="footer-title">
+                Find Us
+            </h5>
+
+            <iframe
+                src="https://www.google.com/maps?q=Barrocco+Bubble+Tea+Cafe+Coimbatore&output=embed"
+                width="100%"
+                height="220"
+                style="border:0;border-radius:15px;"
+                loading="lazy">
+            </iframe>
+
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- NEWSLETTER -->
+    <div class="row align-items-center g-3 mt-2">
+
+        <div class="col-lg-6">
+
+            <h5 class="footer-title mb-2">
+                Subscribe For Updates
+            </h5>
+
+            <p class="mb-0">
+                Get updates about new drinks, offers, and special discounts.
+            </p>
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <div class="input-group">
+
+                <input type="email"
+                       class="form-control"
+                       placeholder="Enter your email">
+
+                <button class="btn btn-main">
+                    Subscribe
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <hr class="footer-divider">
+
+    <!-- SOCIAL -->
+    <div class="text-center">
+
+        <div class="footer-social">
+
+            <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- COPYRIGHT -->
+    <div class="text-center mt-3">
+
+        <p class="footer-bottom">
+            © 2026 <span>Bubble Bliss</span>. All Rights Reserved.
+        </p>
+
+        <small>
+            Designed with ❤️ for Bubble Tea Lovers
+        </small>
+
+    </div>
+
+</div>
+
+</footer>
+    <!-- BOOTSTRAP -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT -->
+
+    <script>
+
+        const htmlTag =
+            document.documentElement;
+
+        const themeToggle =
+            document.getElementById('themeToggle');
+
+        const rtlToggle =
+            document.getElementById('rtlToggle');
+
+        const bootstrapLink =
+            document.getElementById('bootstrap-css');
+
+        /* LOAD THEME */
+
+        const savedTheme =
+            localStorage.getItem('theme') || 'light';
+
+        htmlTag.setAttribute(
+            'data-bs-theme',
+            savedTheme
+        );
+
+        /* LOAD DIRECTION */
+
+        const savedDirection =
+            localStorage.getItem('direction') || 'ltr';
+
+        if(savedDirection === 'rtl') {
+
+            htmlTag.setAttribute('dir', 'rtl');
+
+            bootstrapLink.setAttribute(
+                'href',
+                'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css'
+            );
+
+            rtlToggle.innerText = 'LTR';
+
+        }
+
+        /* THEME TOGGLE */
+
+        themeToggle.addEventListener('click', () => {
+
+            const currentTheme =
+                htmlTag.getAttribute('data-bs-theme');
+
+            if(currentTheme === 'light') {
+
+                htmlTag.setAttribute(
+                    'data-bs-theme',
+                    'dark'
+                );
+
+                localStorage.setItem(
+                    'theme',
+                    'dark'
+                );
+
+                themeToggle.innerHTML =
+                    '<i class="fa-solid fa-sun"></i>';
+
+            } else {
+
+                htmlTag.setAttribute(
+                    'data-bs-theme',
+                    'light'
+                );
+
+                localStorage.setItem(
+                    'theme',
+                    'light'
+                );
+
+                themeToggle.innerHTML =
+                    '<i class="fa-solid fa-moon"></i>';
+            }
+
+        });
+
+        /* RTL TOGGLE */
+
+        rtlToggle.addEventListener('click', () => {
+
+            const currentDir =
+                htmlTag.getAttribute('dir');
+
+            if(currentDir === 'ltr') {
+
+                htmlTag.setAttribute(
+                    'dir',
+                    'rtl'
+                );
+
+                bootstrapLink.setAttribute(
+                    'href',
+                    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css'
+                );
+
+                localStorage.setItem(
+                    'direction',
+                    'rtl'
+                );
+
+                rtlToggle.innerText = 'LTR';
+
+            } else {
+
+                htmlTag.setAttribute(
+                    'dir',
+                    'ltr'
+                );
+
+                bootstrapLink.setAttribute(
+                    'href',
+                    'https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'
+                );
+
+                localStorage.setItem(
+                    'direction',
+                    'ltr'
+                );
+
+                rtlToggle.innerText = 'RTL';
+            }
+
+        });
+
+    </script>
+
+    
+<script>
+
+function updatePrice() {
+
+    let drinkPrice =
+        parseInt(document.getElementById('drinkSelect').value);
+
+    let sizePrice =
+        parseInt(document.getElementById('sizeSelect').value);
+
+    let total =
+        drinkPrice + sizePrice;
+
+    let toppings =
+        document.querySelectorAll('.topping:checked');
+
+    toppings.forEach((item) => {
+
+        total += parseInt(item.value);
+
+    });
+
+    document.getElementById('totalPrice').innerText =
+        '₹' + total;
+}
+</script>
+<script>
+let currentIndex = 0;
+
+function updateSlider() {
+    const track = document.querySelector(".slider-track");
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+function nextSlide() {
+    const slides = document.querySelectorAll(".slide");
+    if (currentIndex < slides.length - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateSlider();
+}
+
+function prevSlide() {
+    const slides = document.querySelectorAll(".slide");
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = slides.length - 1;
+    }
+    updateSlider();
+}
+
+
+
+</script>
+
+</body>
+
+</html>

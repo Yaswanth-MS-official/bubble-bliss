@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" dir="auto">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Bubble Bliss Admin Dashboard</title>
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+
+    <!-- Chart JS -->
+<link rel="icon" type="image/x-icon" href="/assets/favicons/latte-art.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="/assets/css/side.css">
+
+    <style>
+
+
+   
+        /* CARDS */
+
+        .sidebar-card,
+        .chart-box,
+        .report-box{
+            background:#fff;
+            border-radius:25px;
+            padding:25px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-card{
+            background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+            color:#fff;
+            text-align:center;
+        }
+
+        .progress{
+            height:10px;
+            border-radius:20px;
+            overflow:hidden;
+            background:#eee;
+        }
+
+        .progress-bar{
+            background:#fff;
+        }
+
+        /* CHART */
+
+        #salesChart{
+            width:100% !important;
+            height:350px !important;
+        }
+
+       
+
+
+    
+
+
+    </style>
+    <style>
+  
+/* =========================
+   MOBILE FIX
+========================= */
+
+/* =========================
+   ROOT
+========================= */
+:root{
+    --pink:#ff4fa3;
+    --purple:#7c4dff;
+    --bg:#f5f6fa;
+    --card:#ffffff;
+    --text:#222;
+    --border:#e5e5e5;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    margin:0;
+    overflow-x:hidden;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar{
+    width:280px;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    background:#fff;
+    padding:20px;
+    overflow-y:auto;
+    z-index:999;
+    transition:.3s;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+.sidebar.show{
+    left:0;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content{
+    margin-left:280px;
+    padding:25px;
+    transition:.3s;
+}
+
+
+
+/* =========================
+   BUTTONS
+========================= */
+.btn-pink{
+    background:linear-gradient(
+        135deg,
+        var(--pink),
+        var(--purple)
+    );
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-pink:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   PROFILE
+========================= */
+.admin-profile{
+    background:#fff;
+    padding:12px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
+}
+
+.admin-profile img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:3px solid var(--pink);
+}
+
+/* =========================
+   SEARCH
+========================= */
+.search-box input,
+#search{
+    width:100%;
+    height:50px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    padding:0 15px;
+    outline:none;
+}
+
+/* =========================
+   TABLE
+========================= */
+.table-box{
+    background:#fff;
+    border-radius:20px;
+    padding:20px;
+    overflow-x:auto;
+    box-shadow:0 5px 20px rgba(0,0,0,.05);
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,
+td{
+    padding:14px;
+    border-bottom:1px solid #eee;
+}
+
+th{
+    font-weight:700;
+}
+
+/* =========================
+   MODAL
+========================= */
+.modal-content{
+    border:none;
+    border-radius:20px;
+}
+
+.modal-content input{
+    width:100%;
+    margin-bottom:12px;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+[data-bs-theme="dark"]{
+    --bg:#121212;
+    --card:#1f1f1f;
+    --text:#ffffff;
+    --border:#333;
+}
+
+[data-bs-theme="dark"] body{
+    background:#121212;
+    color:#fff;
+}
+
+[data-bs-theme="dark"] .sidebar,
+[data-bs-theme="dark"] .admin-profile,
+[data-bs-theme="dark"] .table-box,
+[data-bs-theme="dark"] .modal-content{
+    background:#1f1f1f;
+    color:#fff;
+}
+
+[data-bs-theme="dark"] input{
+    background:#2b2b2b;
+    color:#fff;
+    border:1px solid #444;
+}
+
+[data-bs-theme="dark"] input::placeholder{
+    color:#aaa;
+}
+
+[data-bs-theme="dark"] table th,
+[data-bs-theme="dark"] table td{
+    border-color:#333;
+}
+
+        /* TOP BUTTONS */
+
+        .add-product-btn,
+        .login-btn{
+            background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+            color:#fff;
+            padding:12px 22px;
+            border-radius:14px;
+            text-decoration:none;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .add-product-btn:hover,
+        .login-btn:hover{
+            transform:translateY(-4px);
+            color:#fff;
+        }
+
+        /* ADMIN PROFILE */
+
+        .admin-profile{
+            background:#fff;
+            padding:12px 18px;
+            border-radius:18px;
+            display:flex;
+            align-items:center;
+            gap:14px;
+            text-decoration:none;
+            color:#222;
+            box-shadow:0 10px 25px rgba(0,0,0,0.05);
+            transition:0.3s;
+        }
+
+        .admin-profile:hover{
+            transform:translateY(-4px);
+        }
+
+        .admin-profile img{
+            width:55px;
+            height:55px;
+            border-radius:50%;
+            object-fit:cover;
+            border:3px solid #ff4fa3;
+        }
+
+        .admin-profile h6{
+            font-weight:700;
+        }
+
+        /* CARDS */
+
+        .sidebar-card,
+        .chart-box,
+        .report-box{
+            background:#fff;
+            border-radius:25px;
+            padding:25px;
+            box-shadow:0 10px 25px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-card{
+            background:linear-gradient(135deg,#ff4fa3,#7c4dff);
+            color:#fff;
+            text-align:center;
+        }
+
+        .progress{
+            height:10px;
+            border-radius:20px;
+            overflow:hidden;
+            background:#eee;
+        }
+
+        .progress-bar{
+            background:#fff;
+        }
+
+        /* CHART */
+
+        #salesChart{
+            width:100% !important;
+            height:350px !important;
+        }
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:991px){
+
+    .toggle-btn{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        position:fixed;
+        top:15px;
+        left:15px;
+        z-index:10001;
+    }
+
+    .sidebar{
+        left:-280px;
+    }
+
+    .sidebar.show{
+        left:0;
+    }
+
+    .main-content{
+        margin-left:0;
+        width:100%;
+        padding:70px 15px 20px;
+    }
+
+    .admin-profile{
+        width:100%;
+    }
+
+    .add-product-btn,
+    .login-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    h2{
+        font-size:28px;
+    }
+
+    table{
+        min-width:550px;
+    }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+@media(max-width:576px){
+
+    h2{
+        font-size:24px;
+    }
+
+    .admin-profile h6{
+        font-size:15px;
+    }
+
+    .btn-pink{
+        height:48px;
+    }
+}
+
+/* =========================
+HEADER FIX (SEARCH BAR)
+========================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* SEARCH BOX FIX */
+.header input#search {
+    width: 250px;
+    height: 40px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    outline: none;
+    background: #fff;
+}
+
+/* SEARCH FOCUS */
+.header input#search:focus {
+    border-color: #ff4fa3;
+    box-shadow: 0 0 5px rgba(255,79,163,0.3);
+}
+
+/* BUTTON */
+.btn-pink {
+    background: #ff4fa3;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+/* =========================
+TABLE
+========================= */
+.table-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* =========================
+MODAL FIX
+========================= */
+.modal-box {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+/* =========================
+DARK MODE FIX (IMPORTANT)
+========================= */
+[data-bs-theme="dark"] body {
+    background: #121212;
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .sidebar,
+[data-bs-theme="dark"] .table-box,
+[data-bs-theme="dark"] .modal-content {
+    background: #1f1f1f;
+    color: #fff;
+}
+
+[data-bs-theme="dark"] .header input#search {
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+[data-bs-theme="dark"] .header input#search::placeholder {
+    color: #aaa;
+}
+
+/* =========================
+MOBILE VIEW FIX
+========================= */
+@media (max-width: 768px) {
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .header input#search {
+        width: 100%;
+    }
+}
+    </style>
+
+    <style>
+    
+  
+
+
+
+
+     
+
+      
+
+     
+
+        /* =========================================
+           TOPBAR
+        ========================================= */
+
+        .topbar{
+            background: #fff;
+            padding: 18px 25px;
+            border-radius: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .search-box{
+            width: 350px;
+            position: relative;
+        }
+
+        .search-box input{
+            width: 100%;
+            height: 52px;
+            border: none;
+            background: #f4f4f4;
+            border-radius: 50px;
+            padding: 0 50px 0 20px;
+            outline: none;
+        }
+
+        .search-box i{
+            position: absolute;
+            right: 18px;
+            top: 18px;
+            color: #777;
+        }
+
+        .admin-box{
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .admin-box img{
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        
+      
+
+      
+
+       
+
+    
+
+        .pink{
+            background: linear-gradient(135deg,#ff4fa3,#ff8cc7);
+        }
+
+        .purple{
+            background: linear-gradient(135deg,#7c4dff,#aa8cff);
+        }
+
+        .orange{
+            background: linear-gradient(135deg,#ff9800,#ffc46b);
+        }
+
+        .blue{
+            background: linear-gradient(135deg,#29b6f6,#74d8ff);
+        }
+
+        
+        /* =========================================
+           TABLE
+        ========================================= */
+
+        .order-table{
+            background: #fff;
+            border-radius: 30px;
+            padding: 30px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.05);
+        }
+
+        table{
+            width: 100%;
+        }
+
+        table tr{
+            border-bottom: 1px solid #eee;
+        }
+
+        table td{
+            padding: 18px 0;
+        }
+
+        .status{
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .completed{
+            background: #d4f8e8;
+            color: #00a651;
+        }
+
+        .pending{
+            background: #ffe0ea;
+            color: #ff4fa3;
+        }
+
+        /* =========================================
+           TOP DRINKS
+        ========================================= */
+
+        .drink-item{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .drink-item img{
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           REVIEWS
+        ========================================= */
+
+        .review-item{
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
+        .review-user{
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* =========================================
+           DARK MODE
+        ========================================= */
+
+        [data-bs-theme="dark"] body{
+            background: #121212;
+        }
+
+        [data-bs-theme="dark"] .sidebar,
+        [data-bs-theme="dark"] .topbar,
+        [data-bs-theme="dark"] .dashboard-card,
+        [data-bs-theme="dark"] .chart-box,
+        [data-bs-theme="dark"] .order-table{
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        [data-bs-theme="dark"] .search-box input{
+            background: #2b2b2b;
+            color: #fff;
+        }
+
+        [data-bs-theme="dark"] .sidebar-menu a{
+            color: #ddd;
+        }
+
+        [data-bs-theme="dark"] table tr,
+        [data-bs-theme="dark"] .drink-item,
+        [data-bs-theme="dark"] .review-item{
+            border-color: #333;
+        }
+
+        [data-bs-theme="dark"] .text-muted{
+            color: #cfcfcf !important;
+        }
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width:991px){
+
+            .sidebar{
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .main-content{
+                margin-left: 0;
+            }
+
+            .topbar{
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-box{
+                width: 100%;
+            }
+
+           
+
+        }
+       
+
+ 
+
+ 
+
+
+        @media (max-width: 991px) {
+    /* Hide the sidebar off-screen by default */
+    .sidebar {
+        position: fixed;
+        left: -280px; 
+        width: 280px;
+        transition: 0.3s ease-in-out;
+        z-index: 9999;
+    }
+
+    /* When the .show class is added via JS, slide it in */
+    .sidebar.show {
+        left: 0;
+    }
+
+    /* Ensure main content takes full width without margins */
+    .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+}
+
+
+        /* =========================================
+   SIDEBAR MENU SECTION
+========================================= */
+
+
+
+/* DARK MODE */
+
+[data-bs-theme="dark"] .menu-title{
+    color: #aaa;
+}
+
+[data-bs-theme="dark"] .sidebar-menu a{
+    color: #ddd;
+}
+
+/* ================= APP WRAPPER ================= */
+
+
+
+
+
+
+
+
+/* ================= MENU ================= */
+.content{
+    padding:20px;
+}
+
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#fff;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card img{
+    width:100%;
+    height:140px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.btn-pink{
+    background:#ff4fa3;
+    color:white;
+    width:100%;
+    border:none;
+    padding:10px;
+    border-radius:10px;
+    margin-top:10px;
+    transition:0.3s ease;
+    cursor:pointer;
+}
+
+.btn-pink:hover{
+    background:#7c4dff;
+    color:white;
+    transform:translateY(-2px);
+    box-shadow:0 8px 15px rgba(0,0,0,0.15);
+}
+/* ================= CART ================= */
+.cart-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:#ff69b4;
+    border:none;
+    padding:15px;
+    border-radius:50%;
+    color:white;
+    font-size:18px;
+}
+
+.cart-box{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.5);
+}
+
+.cart-content{
+    background:white;
+    width:90%;
+    max-width:420px;
+    margin:80px auto;
+    padding:20px;
+    border-radius:15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+
+    <div class="sidebar show"
+         id="sidebar">
+
+        <div class="logo">
+              <i class="fa-solid fa-mug-hot brand-icon"></i>
+
+            <span>Bubble Bliss</span>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+
+        <div class="d-flex gap-2 mb-4">
+
+            <button class="btn nav-action-btn flex-fill"
+                    id="themeToggle">
+
+                <i class="fa-solid fa-moon"></i>
+
+            </button>
+
+            <button class="btn nav-action-btn flex-fill"
+                    id="rtlToggle">
+
+                RTL
+
+            </button>
+
+        </div>
+
+        <!-- MAIN MENU -->
+
+        <div class="menu-section">
+
+            <h6 class="menu-title">
+                MAIN MENU
+            </h6>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="dashboard.html"
+                       class="">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span>
+                            Dashboard
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="order.html"
+                    class="active">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>
+                            Orders
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="customer.html">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <span>
+                            Customers
+                        </span>
+
+                    </a>
+                </li>
+
+                <li>
+                    <a href="drinks.html">
+
+                        <i class="fa-solid fa-mug-hot"></i>
+
+                        <span>
+                            Drinks
+                        </span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- SETTINGS -->
+
+        <div class="menu-section mt-4">
+
+            <h6 class="menu-title">
+                SETTINGS
+            </h6>
+
+            <ul class="sidebar-menu">
+
+                <li>
+                    <a href="profile.html">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <span>
+                            Profile
+                        </span>
+
+                    </a>
+                </li>
+
+               
+
+                <li>
+                    <a href="login.html">
+
+                        <i class="fa-solid fa-right-from-bracket"></i>
+
+                        <span>
+                            Logout
+                        </span>
+
+                    </a>
+                </li>
+
+            </ul>
+
+          
+
+        </div>
+
+    </div>
+
+    <!-- MAIN CONTENT -->
+
+    <div class="main-content">
+       
+
+        <!-- TOP HEADER -->
+
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
+
+             <button class="toggle-btn"
+        onclick="toggleSidebar()">
+
+        <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+            <!-- LEFT -->
+
+            <div class="d-flex gap-3 flex-wrap">
+
+                <a href="product.html"
+                   class="add-product-btn">
+
+                    <i class="fa-solid fa-plus me-2"></i>
+
+                    Add Products
+
+                </a>
+
+                <a href="login.html"
+                   class="login-btn">
+
+                    <i class="fa-solid fa-right-to-bracket me-2"></i>
+
+                    Login
+
+                </a>
+
+            </div>
+
+            <!-- RIGHT -->
+
+        <a href="profile.html" class="admin-profile">
+
+    <img src="https://i.pravatar.cc/150?img=12"
+         id="dashboardAdminImage">
+
+    <div>
+
+        <h6 class="mb-0"
+            id="dashboardAdminName">
+
+            Admin Yaswanth
+
+        </h6>
+
+        <small>
+            Administrator
+        </small>
+
+    </div>
+
+        </a>
+ </div>
+
+           
+
+
+       <!-- HEADER -->
+<div class="header">
+    
+    <h2>👥 Customers</h2>
+
+   <div class="d-flex gap-2 flex-wrap">
+    <input type="text" id="search" placeholder="Search customer..." onkeyup="searchCustomer()">
+    <button class="btn-pink" onclick="openModal()">+ Add</button>
+</div>
+</div>
+
+<!-- TABLE -->
+<div class="table-box">
+<table>
+<thead>
+<tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Orders</th>
+    <th>Total</th>
+    <th>Action</th>
+</tr>
+</thead>
+
+<tbody id="tableBody"></tbody>
+</table>
+</div>
+
+</div>
+
+<!-- ADD CUSTOMER MODAL -->
+<div class="modal-box" id="modal">
+    <div class="modal-content">
+        <h5>Add Customer</h5>
+
+        <input type="text" id="name" placeholder="Name">
+        <input type="text" id="phone" placeholder="Phone">
+        <input type="text" id="email" placeholder="Email">
+
+        <button class="btn-pink w-100" onclick="addCustomer()">Save</button>
+        <button class="btn btn-secondary w-100 mt-2" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<!-- ADD ORDER MODAL -->
+<div class="modal-box" id="orderModal">
+    <div class="modal-content">
+        <h5>Add Order 🧋</h5>
+
+        <input type="text" id="itemName" placeholder="Item Name">
+        <input type="number" id="itemPrice" placeholder="Price">
+
+        <button class="btn-pink w-100" onclick="addOrder()">Add</button>
+        <button class="btn btn-secondary w-100 mt-2" onclick="closeOrder()">Close</button>
+    </div>
+</div>
+</div>
+
+
+
+ <script src="/assets/js/side.js"></script>
+<script>
+
+let customers = [
+{
+    name:"Ravi Kumar",
+    phone:"9876543210",
+    email:"ravi@gmail.com",
+    orders:[
+        {item:"Classic Milk Tea", price:120},
+        {item:"Brown Sugar Boba", price:180}
+    ]
+},
+{
+    name:"Priya Sharma",
+    phone:"9123456780",
+    email:"priya@gmail.com",
+    orders:[
+        {item:"Strawberry Boba", price:150}
+    ]
+}
+];
+
+let selectedIndex = null;
+
+/* ================= RENDER ================= */
+function renderTable(data = customers){
+
+    let table = document.getElementById("tableBody");
+    table.innerHTML = "";
+
+    data.forEach((c, index) => {
+
+        let orderHTML = "";
+        let total = 0;
+
+        c.orders.forEach(o=>{
+            total += o.price;
+            orderHTML += `<div>🧋 ${o.item} - ₹${o.price}</div>`;
+        });
+
+        table.innerHTML += `
+        <tr>
+            <td>${c.name}</td>
+            <td>${c.phone}</td>
+            <td>${c.email}</td>
+
+            <td>
+                <div class="order-box">
+                    ${orderHTML}
+                </div>
+            </td>
+
+            <td><b>₹${total}</b></td>
+
+            <td>
+                <button class="btn btn-success btn-sm" onclick="openOrder(${index})">
+                    + Add Order
+                </button>
+
+                <button class="btn btn-danger btn-sm" onclick="deleteCustomer(${index})">
+                    Delete
+                </button>
+            </td>
+        </tr>
+        `;
+    });
+}
+
+/* ================= CUSTOMER ================= */
+function addCustomer(){
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let email = document.getElementById("email").value;
+
+    if(name && phone && email){
+        customers.push({name, phone, email, orders:[]});
+        renderTable();
+        closeModal();
+    }
+}
+
+function deleteCustomer(index){
+    customers.splice(index,1);
+    renderTable();
+}
+
+/* ================= ORDER ================= */
+function openOrder(index){
+    selectedIndex = index;
+    document.getElementById("orderModal").style.display = "block";
+}
+
+function addOrder(){
+
+    let item = document.getElementById("itemName").value;
+    let price = Number(document.getElementById("itemPrice").value);
+
+    if(item && price){
+
+        customers[selectedIndex].orders.push({
+            item,
+            price
+        });
+
+        renderTable();
+        closeOrder();
+    }
+}
+
+function closeOrder(){
+    document.getElementById("orderModal").style.display = "none";
+}
+
+/* ================= MODAL ================= */
+function openModal(){
+    document.getElementById("modal").style.display="block";
+}
+
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+
+/* ================= SEARCH ================= */
+function searchCustomer(){
+
+    let value = document.getElementById("search").value.toLowerCase();
+
+    let filtered = customers.filter(c =>
+        c.name.toLowerCase().includes(value) ||
+        c.phone.includes(value) ||
+        c.email.toLowerCase().includes(value)
+    );
+
+    renderTable(filtered);
+}
+
+renderTable();
+
+</script>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
