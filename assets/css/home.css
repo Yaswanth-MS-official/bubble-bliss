@@ -1419,3 +1419,15 @@ RESPONSIVE
     }
 
 }
+.nav-link,
+.navbar .nav-link,
+.dropdown-item {
+    text-decoration: none !important;
+    box-shadow: none !important;
+}
+
+/* REMOVE YOUR CUSTOM UNDERLINE COMPLETELY */
+.nav-link::after {
+    display: none !important;
+    content: none !important;
+}

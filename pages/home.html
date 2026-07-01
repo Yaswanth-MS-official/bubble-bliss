@@ -56,6 +56,24 @@
   }
 
 }
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #a855f7;
+  transition: 0.3s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
 
 </style>
  </head>
@@ -91,8 +109,7 @@
    <li class="nav-item dropdown">
 
                    <a class="nav-link dropdown-toggle active d-flex align-items-center gap-1"
-   href="#"
-   data-bs-toggle="dropdown">
+   href="#">
 
   Home
   <i class="fa-solid fa-chevron-down dropdown-icon"></i>
